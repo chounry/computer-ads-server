@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Computer Spec | Motherboard Detail{% endblock %}
+{% block staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/pro_detail_base.css' %}">
+{% endblock staticfiles %}
+{% block content %}
+
+<div class="pro_detail">
+	<!-- Producute main title -->
+	<h2>Micro ATX ASUS</h2>
+	<hr />
+
+	<div id="m_bottom">
+		<div id="right_grid">
+			<div id="r_g_up">
+				<!-- share logo and rate stars -->
+				<div id="sh_rate">
+					<div>
+						<i class="fab fa-facebook"></i>
+						<i class="fab fa-google-plus-square"></i>
+						<i class="fab fa-twitter-square"></i>
+					</div>
+					<div>
+						<span>Rate stars</span>
+					</div>
+				</div>
+				
+				<!-- Sliding picture -->
+				<div id="border_right">
+					<div id="sli_pic">
+							<div data-to="left"><i class="fas fa-angle-left"></i></div>
+							<div data-to="right"><i class="fas fa-angle-right"></i></div>
+					</div>
+				</div>
+				<div id="pho_change">
+					<ul>
+						<li><img src="../imgs/moth.png" data-pos="1" width="100%" alt=""/></li>
+						<li><img src="../imgs/moth1.jpg" data-pos="2" width="100%" alt=""/></li>
+						<li><img src="../imgs/moth2.jpg" data-pos="3" width="100%" alt=""/></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Available market for product -->
+			<div id="r_g_bottom">
+				<table id="market">
+					<tr>
+						<td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
+					</tr>
+					<tr>
+						<td colspan="2"><a href="#"><img src="../imgs/logo/newegg-logo.png" width="100" alt="newegg logo"/></a></td>
+						<td></td>
+						<td align="right" class="market_cost">14.99$</td>
+						<td align="right"><a href="#"><div class="buy_logo"buy_logo>Check</div></a></td>
+					</tr>
+					<tr>
+						<td colspan="2"><a href="#"><img src="../imgs/logo/amazon-logo1.png" width="100" alt="amazon logo"/></a></td>
+						<td></td>
+						<td align="right" class="market_cost">14.99$</td>
+						<td align="right"><a href="#"></a><div class="buy_logo">Check</div></a></td>
+					</tr>
+					<tr>
+						<td colspan="2"><a href="#"><img src="../imgs/logo/ebay-logo1.png" width="100" alt="ebay logo"/></a></td>
+						<td></td>
+						<td align="right" class="market_cost">14.99$</td>
+						<td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Specificaion table -->
+		<div id="left_grid">
+			<div style="margin-top:30px;"></div>
+			<div id="lef_m_grid">
+				<div id="lef_lef_gr">
+					<div style="background-color:white;">
+						<table>
+							<tr>
+								<td><span>{{ graphic.processor.name}} Cores</span></td>
+								<td align="center">{{ graphic.num_of_core }}</td>
+							</tr>
+							<tr>
+								<td><span>Base Clock</span></td>
+								<td align="center">{{ graphic.core_clock }}</td>
+							</tr>
+							<tr>
+								<td><span>Boost Clock</span></td>
+								<td align="center">{{ graphic.boost_clock }}</td>
+							</tr>
+							<tr>
+								<td><span>Memory Speed</span></td>
+								<td align="center">{{ graphic.mem_speed }}</td>
+							</tr>    
+							<tr>
+								<td><span>Memory Capacity</span></td>
+								<td align="center">{{ graphic.get_mem_cap }}</td>
+							</tr>
+							<tr>
+								<td><span>Memory Inerface Width</span></td>
+								<td align="center">{{ graphic.mem_inter_width }}</td>
+							</tr>
+							<tr>
+								<td><span>Memory Bandwidth</span></td>
+								<td align="center">{{ graphic.mem_bandwidth }}</td>
+							</tr>
+							<tr>
+								<td><span>Bus Inerface</span></td>
+								<td align="center">{{ graphic.expansion_slot.expansion_conn.name }}{{ graphic.expansion_slot.expansion_conn.version }} {{graphic.expansion_slot.pin }}</td>
+							</tr>
+							<tr>
+								<td><span>Dimension</span></td>
+								<td align="center">{{ graphic.dimension }}</td>
+							</tr>
+							<tr>
+								<td><span>Technology Support</span></td>
+								<td align="center">
+									{% for api in all_api %}
+										{{ api.name }}{{api.version}} , 
+									{% endfor %}
+								</td>
+							</tr>
+							<tr>
+								<td><span>Power</span></td>
+								<td align="center">{{ graphic.power }}</td>
+							</tr>
+
+							<tr id="tr_no_border">
+								<td><span>Recommended System Power</span></td>
+								<td align="center">{{ graphic.recom_power }}</td>							
+							</tr>                                                    
+						</table>
+					</div>
+				</div>
+			
+				<!-- Supported product section -->
+				<div id="lef_right_gr">
+					<div class="recom">
+						<p>SUPPORTED CPU</p>
+						<div class="recom_m_box">
+							<!-- Button left -->
+							<div class="sli_cpu" data-to="left"><i class="fas fa-angle-left"></i></div>
+
+							<!-- Main box store each product -->
+							<div class="all_pro_cont">
+								<ul>
+									<li>
+										<div class="pro_box">
+											<div class="pro_img">
+												<a href="">
+													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
+												<a href="">
+											</div>
+											<hr style="margin:0;" />
+											<div class="recom_pro_title"><a href="">
+												<p >
+														Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores
+												</p>
+											</a></div>
+											<p class="read_spec"><a href="#">Read Spec</a></p>
+											<div>
+												<p class="pro_price">14.99$</p>
+												<a href="#" class="check_butt">CHECK IT OUT</a>
+											</div>
+										</div>
+									</li>
+
+									<li>
+										<div class="pro_box">
+											<div class="pro_img">
+												<a href="">
+													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
+												</a>
+											</div>
+											<hr style="margin:0;" />
+											<div class="recom_pro_title"><a href="">
+												<p>
+														Intel i5-2400- 3.4GHz- Cache : 4MB - 4Cores
+												</p>
+											</a></div>
+											<p class="read_spec"><a href="#" >Read Spec</a></p>
+											<div>
+												<p class="pro_price">14.99$</p>
+												<a href="#" class="check_butt">CHECK IT OUT</a>
+											</div>
+										</div>
+									</li>
+
+									<li class="test">
+										<div class="pro_box">
+											<div class="pro_img">
+												<a href="">
+													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
+												</a>
+											</div>
+											<hr style="margin:0;" />
+											<div class="recom_pro_title"><a href="">
+												<p>
+														Intel i5-2400 - 3.4GHz - Cache : 4MB - 4Cores
+												</p>
+											</a></div>
+											<p class="read_spec"><a href="#">Read Spec</a></p>
+											<div>
+												<p class="pro_price">14.99$</p>
+												<a href="#" class="check_butt">CHECK IT OUT</a>
+											</div>
+										</div>
+									</li>
+
+									<li class="test">
+										<div class="pro_box">
+											<div class="pro_img">
+												<a href="">
+													<img src="../imgs/moth2.jpg" width="100%" alt="product-img"/>
+												<a href="">
+											</div>
+											<hr style="margin:0;" />
+											<div class="recom_pro_title"><a href="">
+												<p>
+														Intel i5-2400- 3.4GHz-Cache : 4MB - 4Cores
+												</p>
+											</a></div>
+											<p class="read_spec"><a href="#">Read Spec</a></p>
+											<div>
+												<p class="pro_price">14.99$</p>
+												<a href="#" class="check_butt">CHECK IT OUT</a>
+											</div>
+										</div>
+									</li>                                        
+								</ul>
+							</div>
+							<!-- button right -->
+							<div class="sli_cpu" data-to="right">
+								<i class="fas fa-angle-right"></i>                        
+							</div>
+						</div>
+						<!-- End each supported product -->
+					</div>
+				</div>
+				<!-- End supported product section -->
+			</div>
+			<!-- End left main grid -->
+		</div>
+		<!-- End Specificaiton table -->
+	</div>
+</div>
+<script src="{% static 'js/pro_detail_base.js' %}"></script>
+{% endblock content %}
+			

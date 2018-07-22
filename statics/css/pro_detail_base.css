@@ -1,0 +1,145 @@
+/* ----------- General ------------ */
+table tr{border-bottom:1px solid #95989A;}
+hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
+
+#m_bottom{display: grid;grid-template-columns: 28% 72%;grid-gap: 20px;}
+#body h2:first-child{font-size:22px;margin-bottom:0;}
+
+#sh_rate{width:344px;overflow: hidden;}
+#sh_rate div:first-child{float:left;font-size: 24px;}
+#sh_rate div i{cursor: pointer;}
+#sh_rate div .fa-twitter-square{color: #1DA1F2;}
+#sh_rate div .fa-google-plus-square{color: #DB4437;}
+#sh_rate div .fa-facebook{color:#3b5998;}
+#sh_rate div:nth-child(2){float:right;}
+
+
+#border_right{border-right: 1px solid #95989A;}
+#sli_pic{
+    background-color:white;
+    background-image: url("../imgs/moth1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 315px;
+    height:280px;
+    width:344px;
+}
+#sli_pic div{
+    background-color: #8A8A8A;
+    cursor: pointer;
+    font-size: 45px;
+    height: 100%;
+    line-height: 6;
+    opacity: 0.16;
+    text-align: center;
+    width:8%;
+}
+
+#sli_pic div:hover{opacity: 0.4;}
+#sli_pic div:first-child{float:left;}
+#sli_pic div:nth-child(2){float:right;}
+
+#pho_change ul{background-color:#303030;margin:auto;width:200px;padding:0 10px 0 10px;}
+#pho_change ul li{
+    background: white;
+    border: 2px solid white;
+    cursor: pointer;
+    display: inline-block;
+    height: 45px;
+    margin: 6px 0 6px 0;
+    overflow: hidden;
+    width: 60px;
+}
+#pho_change ul li:hover{border-color:black;}
+
+/*------------------ Market table----------- */
+#r_g_bottom{margin-top:100px;margin-bottom:10px;font-family: sans-serif;}
+#market{border-collapse: collapse;width:344px;}
+#market a{text-decoration: none;}
+#market td{padding:5px;vertical-align: center;}
+.market_cost{font-size:14px;font-weight: bold;}
+.buy_logo{
+    background-color: #FF9900;
+    border-bottom: 2px solid #FF9900;
+    border-radius: 50px;
+    color:white;
+    cursor: pointer;
+    font-size:14px;
+    font-weight: bold;
+    padding:2px 9px;
+    text-align: center;
+    width:50px;
+}
+.buy_logo:hover{border-color:white;}
+#avail_logo{ 
+    padding:2px 8px;
+    border:unset;
+    cursor: default;
+    font-size:16px;
+    font-weight: bold;
+    width:100% !important;
+}
+
+
+/*------ Right grid ------------*/
+#lef_lef_gr table{width:95%;}
+#lef_m_grid{display:grid;grid-template-columns: 1fr 1fr;grid-gap: 5px;font-family: sans-serif;}
+#lef_lef_gr table{
+    border-collapse:collapse;
+    margin:auto;
+}
+#lef_lef_gr table td:first-child{width:150px;}
+#lef_lef_gr table td{padding:10px 0;font-size:12px;}
+#tr_no_border{border:unset;}
+#lef_lef_gr table td:first-child{font-size:13px;font-weight: bold;}
+
+/* ------------- Left Right grid supported product ---------------- */
+.recom{margin-bottom: 20px;}
+.recom p{margin:0;font-weight: bold;}
+.recom p:first-child{font-size:14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.recom_m_box{
+    background-color: white;
+    border-radius: 4px;
+    display: grid;
+    font-weight: bold;
+    grid-template-columns: 6% 88% 6%;
+    height:233px;
+    width:96%;
+}
+
+/* Slide product */
+.sli_cpu{
+    background-color: #8A8A8A;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 7;
+    opacity: 0.16;
+    text-align: center;
+}
+.sli_cpu:last-child{border-radius: 0 4px 4px 0;}
+.sli_cpu:first-child{border-radius: 4px 0 0 4px;}
+.sli_cpu:hover{opacity: 0.4;}
+
+.all_pro_cont ul {margin:0;list-style: none;padding:5px 0;width:auto;}
+.all_pro_cont ul li{display:inline-block;margin:0 4px;width:190px;}
+
+.pro_box{border:1px solid #D8DADB;border-radius:4px;height:212px;padding:4px;}
+.pro_img{height:135px;margin-bottom:3px;overflow: hidden;width:176px;}
+.recom_pro_title p{font-size: 13px !important;font-family: "segoe ui",sans-serif;height: 38px;}
+.recom_pro_title a{text-decoration: none;color:black;}
+.read_spec {font-size:12px;}
+.read_spec a{color:#348899;text-decoration: none;}
+.read_spec a:hover{text-decoration: underline;}
+.pro_price{display: inline;font-size:13px !important;}
+.check_butt{
+    background-color: #FF9900;
+    border-radius: 17px;
+    color: white;
+    float: right;
+    font-size: 11px;
+    font-family: "segoe ui", sans-serif;
+    line-height: 2;
+    padding: 0 5px;
+}
+.check_butt:hover{text-decoration: underline;}
+

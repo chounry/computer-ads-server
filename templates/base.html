@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous"> -->
+    <script src="{% static 'js/fontawesome-all.js' %}"></script>    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    {% block staticfiles %}{% endblock staticfiles %}
+</head>
+<body style="margin:0;">
+
+    <!-- Navbar -->
+    <div id="nav_bar">
+        <div id="nav_left">
+            <a href="{% url 'mainboard:all_mainboards' %}">COMPUTER SPEC</a>
+        </div>
+        <div id="search">
+            <input type="text" name="search" size="25"/>
+            <p>Search</p>
+        </div>
+        <div id="nav_right">
+            <ul id='nav_ul'>
+                <li id='drop_p_form_butt'>
+                    <a href="#">ADD PRODUCT</a>
+                    <div id='add_pro_drop' class='display add_pro_drop_shadow'>
+                        <ul>
+                            <li>
+                                <a href="{% url 'mainboard:mainboard_form' %}">
+                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/mainboard.png' %}" alt="mainboard" width='30'></p>
+                                    <p>MAINBOARD</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/cpu.png' %}" alt="cpu" width='30'></p>
+                                    <p>CPU</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/video-card.png' %}" alt="graphic card" width='30'></p>
+                                    <p>GRAPHIC CARD</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/ram.png' %}" alt="RAM" width='30'></p>
+                                    <p>RAM</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/">MOTHERBOARD</a></li>
+                <li><a href="{% url 'cpu:all_cpu' %}">CPU</a></li>
+                <li><a href="{% url 'graphic:all_graphic' %}">GRAPHIC CARD</a></li>
+                <li><a href="{% url 'ram:all_ram' %}">RAM</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Main content goes hear -->
+    <div id="body">
+        {% block content %}{% endblock content %}
+    </div>
+    <footer>
+        <p id="v_us"><u>Visit Us : </u></p>
+            <p id="social">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-google-plus-g"></i></a>
+            </p>
+        <hr style="border-color:#95989A" />
+        <p id="cr">© 1996-2018, Computerspec.com, Inc All rights reserved.</p>
+    </footer>
+    <script>
+            $('#drop_p_form_butt').mouseover(function(){
+                $(this.children[1]).removeClass('display');
+            }).mouseout(function(){
+                $(this.children[1]).addClass('display');           
+            })
+    </script>
+</body>
+
+</html>

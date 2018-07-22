@@ -1,0 +1,14 @@
+
+
+{% extends "forms/pro_form_base.html" %}
+{% load static %}
+<!-- {% load crispy_forms_tags  %} -->
+{% load bootstrap %}
+{% block title %}Form | Mainbaord{% endblock title %}
+{% block form_static %}
+{% endblock form_static %}
+
+{% block product_form %}
+{{ info_form| bootstrap}}
+    
+{% endblock product_form %}

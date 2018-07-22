@@ -1,0 +1,102 @@
+
+
+/* This is the base CSS for all product list pages
+    Motherboard list page use this CSS...
+    RAM, Graphic Card, CPU page,just overwrite some CSS
+*/
+
+a{text-decoration: none;}
+
+#body{
+    display: grid;
+    font-family: "Roboto", Arial, sans-serif;
+    grid-template-columns: 80% 20%;
+}
+
+#left_gr {padding:30px;}
+
+/* Product list */
+#left_gr ul{
+    display: grid;
+    grid-template-columns: repeat(4,238px);
+    grid-gap: 22px;
+    padding:0;
+}
+ul hr{margin-bottom:0;margin-top:15px;}
+.pro_list li{
+    background: white;
+    border-radius: 3px;
+    list-style: none;
+    height:284px;
+    padding:7px;;
+    transition: 0.05s
+}
+.pro_list li:hover{
+    -moz-box-shadow:0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow:0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2)
+}
+li .pro_img{ 
+    height:154px;
+    overflow: hidden;
+    width:222PX;   
+}
+li p{margin:0;}
+li .pro_title{font-size: 15px;font-weight: bold;min-height: 38px;}
+
+li p a{color:#348899;}
+li p a:hover{text-decoration: underline;}
+.summary_spec {color:#6E6E6E;font-size: 14px}
+.summary_spec p{cursor: default;}
+.to_spec{font-size:12px;}
+.to_spec a{color:#348899;}
+.to_spec a:hover{text-decoration:underline;}
+.pro_share{font-size:18px;text-align: end;}
+.pro_share a:first-child{color:rgb(66, 103, 178);}
+.pro_share a:nth-child(2){color:#dd4b39;}
+.pro_share a:nth-child(3){color:#1da1f2;}
+
+.price-check{overflow: hidden;}
+.price-check p{cursor: default;}
+.price-check p:first-child{
+    float: left;
+    font-size:15px;
+    font-weight: bold;
+}
+.price-check p a{
+    background: #FF9900;
+    border-radius: 15px;
+    float:right;
+    font-size: 12px;
+    font-weight: bold;
+    color:white;
+    padding:4px 10px;
+}
+
+
+/*  Right grid */
+#right_gr{
+    background:#348899;
+    border:1px solid white;
+    color:white;
+    padding:10px;
+}
+#right_gr hr{
+    border-color: white;
+    margin-top:35px;
+}
+.each_filter_cont p{
+    font-size:13px;
+    font-weight: bold;
+    margin-bottom:0;
+}
+.each_filter_cont ul{
+    margin:0;
+    padding-left:5px;
+}
+.each_filter_cont ul li{
+    list-style: none;
+    font-size:13px;
+}
+
+
+

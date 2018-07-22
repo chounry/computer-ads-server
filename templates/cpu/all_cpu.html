@@ -1,0 +1,124 @@
+
+{% extends "base.html" %}
+{% block title %}CPUs | Computer Specification{% endblock %}
+{% load static %}
+{% block staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/all_pro_list_base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all_cpu.css' %}">
+{% endblock %}
+{% block content %}
+    <!-- Product list section -->
+    <div id="left_gr">
+        <ul class="pro_list">
+            {% for cpu in all_cpu %}
+            <li>
+                <div class="pro_img">
+                    <a href="{{ cpu.get_absolute_url }}">
+                        <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                    </a>
+                </div>
+                <hr>
+                <div class="pro_cont">
+                    <p class="pro_title"><a href="{{ cpu.get_absolute_url }}">{{ cpu.name }}</a></p>
+                    <div class="summary_spec">
+                        <p><small>Socket Type : {{ cpu.socket_type.name }}</small></p>
+                        <p><small># of Cores: {{ cpu.num_of_core.amount }}</small></p>
+                        <p><small>Frequency : {{ cpu.base_fr }}</small></p>
+                        <p><small>Cache : {{ cpu.cache }}</small></p>
+                    </div>
+                    <p class="to_spec"><a href="{{ cpu.get_absolute_url }}">Read Spec</a></p>
+                    <div class="pro_share">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-google-plus-square"></i></a>
+                        <a href=""><i class="fab fa-twitter-square"></i></a>
+                    </div>
+                    <div class="price-check">
+                        <p>14.99$</p>
+                        <p><a href="">CHECK IT OUT</a></p>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Filter Section -->
+    <div id="right_gr">
+        <div id="nth_head"></div>
+        <hr>
+        <div id="filter_cont">
+            <div class="each_filter_cont">
+                <p>Number of Cores : </p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> Single Cores
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> Dual Cores
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> Quad Cores
+                    </li>
+                </ul>
+            </div>
+
+            <div class="each_filter_cont">
+                <p>Computer Processor Type :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> Core i3
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> Core i5
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> Core i7
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> AMD 23
+                    </li>
+                </ul>
+            </div>
+
+            <div class="each_filter_cont">
+                <p>Brand :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> Intel
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> AMD
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> HP
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> Dell
+                    </li>
+                </ul>
+            </div>
+
+            <div class="each_filter_cont">
+                <p>Socket Type :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> LGA 1151
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> LGA 1155
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> LGA 833
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> LGA 902
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,83 @@
+#main_wrapper{
+    background:white;    
+    margin:25px auto;
+    border-radius: 2px;
+    padding:30px 10px;
+    width:1180px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.50);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.50);
+}
+#form_telling{
+    font-size:17px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin:0 0 5px 0;
+}
+.box{
+    border:2px solid #348899;
+    border-radius: 3px;
+    -moz-box-shadow:0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow:0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+    padding:10px;
+}
+#inner_wrapper{display:grid;grid-template-columns: 1fr 4fr;grid-gap:8px;}
+
+.form_pro_menu{position: relative !important;top:unset !important;}
+.form_pro_menu ul a{font-weight: bold;width: 93% !important;text-decoration: none;}
+.form_pro_menu ul li a p:last-child{line-height: 3 !important;font-size: 12px;}
+#form_cente_right_gr{display: grid;grid-template-columns: 2fr 1fr;grid-gap: 8px;}
+#form_cente_right_gr input[type='text'], select {
+    border:1px solid #348899 !important;
+    padding: 3px 28px 3px 8px !important;
+    /* height: 28px !important; */
+}
+#form_cente_right_gr span{font-size: 14px;}
+#sub_btn_p{text-align: center;}
+#f_sub_btn{
+    background:#348899;
+    color:white;
+    font-size: 11px;
+    display:inline-block;
+    font-weight: bold;
+    padding:10px 30px;
+    border-radius: 7px;
+    transition:0.05s linear;
+    border:0;
+}
+#f_sub_btn:hover{
+    color:white;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.30);
+}
+#r_r_b_grid{margin-top:8px;}
+.form_title{text-align: center;font-size: 14px;font-weight: bold;}
+.input_grid, .input_grid input{font-size: 12px;;line-height: 2;}
+/* .drop_d_input{display:grid;grid-template-columns: 10fr 1fr;} */
+.add_butt{display: inline-block;}
+.add_butt a p{margin:0;line-height: 2.5;text-align: center}
+
+#form_img_wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.form_img_box{
+    cursor: pointer;
+}
+
+.form_img_box a{
+    background:#FBFBFB;
+    display:inline-block;
+    padding:30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+form label{font-weight: 600;font-size:1.2rem}
+.form_img_box a p{margin:0;}
+.form_img_box input{position: absolute;width:100%;}
+
+
+/* After the page load */
+.btn-default{border: 1px solid #ced4da !important;}

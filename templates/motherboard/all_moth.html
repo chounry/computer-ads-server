@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Computer Spec | Motherboard {% endblock title %}
+{% block staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/all_pro_list_base.css' %}">
+{% endblock staticfiles %}
+    
+{% block content %}
+    <!-- Product list section -->
+    <div id="left_gr">
+        <ul class="pro_list">
+            {% for moth in all_moths %}
+                <li>
+                    <div class="pro_img">
+                        <a href="{{ moth.get_absolute_url }}">
+                            <img src="{% static '/imgs/moth2.jpg' %}" alt="" width="100%" />
+                        </a>
+                    </div>
+                    <hr>
+                    <div class="pro_cont">
+                        <p class="pro_title"><a href="{{ moth.get_absolute_url }}">{{ moth.name }}</a></p>
+                        <div class="summary_spec">
+                            <p><small>Socket Type : {{ moth.socket_type.name }}</small></p>
+                        </div>
+                        <p class="to_spec"><a href="{{ moth.get_absolute_url }}">Read Spec</a></p>
+                        <div class="pro_share">
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                            <a href=""><i class="fab fa-google-plus-square"></i></a>
+                            <a href=""><i class="fab fa-twitter-square"></i></a>
+                        </div>
+                        <div class="price-check">
+                            <p>14.99$</p>
+                            <p><a href="">CHECK IT OUT</a></p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Filter Section -->
+    <div id="right_gr">
+        <div id="nth_head"></div>
+        <hr>
+        <div id="filter_cont">
+            <div class="each_filter_cont">
+                <p>Motherboard Form Factor :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                </ul>
+            </div>
+
+            <div class="each_filter_cont">
+                <p>Socket Type :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                </ul>
+            </div>
+
+            <div class="each_filter_cont">
+                <p>Brand :</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                    <li>
+                        <input type="checkbox" name="atx"/> ATX
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}
