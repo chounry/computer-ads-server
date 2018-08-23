@@ -3,9 +3,10 @@ table tr{border-bottom:1px solid #95989A;}
 hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
 
 #m_bottom{display: grid;grid-template-columns: 28% 72%;grid-gap: 20px;}
-#body h2:first-child{font-size:22px;margin-bottom:0;}
+#body h2:first-child{font-size:22px;margin-top:10px;margin-bottom: 0}
+.pro_detail > hr{margin-top:0;}
 
-#sh_rate{width:344px;overflow: hidden;}
+#sh_rate{width:95%;overflow: hidden;}
 #sh_rate div:first-child{float:left;font-size: 24px;}
 #sh_rate div i{cursor: pointer;}
 #sh_rate div .fa-twitter-square{color: #1DA1F2;}
@@ -22,7 +23,7 @@ hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
     background-repeat: no-repeat;
     background-size: 315px;
     height:280px;
-    width:344px;
+    width:95%;
 }
 #sli_pic div{
     background-color: #8A8A8A;
@@ -39,7 +40,7 @@ hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
 #sli_pic div:first-child{float:left;}
 #sli_pic div:nth-child(2){float:right;}
 
-#pho_change ul{background-color:#303030;margin:auto;width:200px;padding:0 10px 0 10px;}
+#pho_change ul{background-color:#303030;margin:auto;width:210px;padding:0 10px 0 10px;}
 #pho_change ul li{
     background: white;
     border: 2px solid white;
@@ -64,11 +65,11 @@ hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
     border-radius: 50px;
     color:white;
     cursor: pointer;
-    font-size:14px;
+    font-size:12px;
     font-weight: bold;
     padding:2px 9px;
     text-align: center;
-    width:50px;
+    width:57px;
 }
 .buy_logo:hover{border-color:white;}
 #avail_logo{ 
@@ -121,9 +122,9 @@ hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
 .sli_cpu:hover{opacity: 0.4;}
 
 .all_pro_cont ul {margin:0;list-style: none;padding:5px 0;width:auto;}
-.all_pro_cont ul li{display:inline-block;margin:0 4px;width:190px;}
+.all_pro_cont ul li{display:inline-block;margin:0 4px;width:47%;}
 
-.pro_box{border:1px solid #D8DADB;border-radius:4px;height:212px;padding:4px;}
+.pro_box{border:1px solid #D8DADB;border-radius:4px;height:224px;padding:4px;}
 .pro_img{height:135px;margin-bottom:3px;overflow: hidden;width:176px;}
 .recom_pro_title p{font-size: 13px !important;font-family: "segoe ui",sans-serif;height: 38px;}
 .recom_pro_title a{text-decoration: none;color:black;}
@@ -143,3 +144,7 @@ hr{border-color:#95989A;background-color:#95989A;height: 1px; border: 0;}
 }
 .check_butt:hover{text-decoration: underline;}
 
+
+@media only screen and (min-width:1920px){
+    .all_pro_cont ul li{width:31%;}
+}

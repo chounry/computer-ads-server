@@ -17,19 +17,25 @@ a{text-decoration: none;}
 
 /* Product list */
 #left_gr ul{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(4,238px);
-    grid-gap: 22px;
-    padding:0;
+    grid-gap: 13px;
+    padding:0; */
 }
 ul hr{margin-bottom:0;margin-top:15px;}
 .pro_list li{
     background: white;
     border-radius: 3px;
+    width: 238px;
     list-style: none;
-    height:284px;
-    padding:7px;;
+    height:294px;
+    margin-right: 8px;
+    margin-bottom: 13px;
+    float:left;
+
+    padding:7px;
     transition: 0.05s
+
 }
 .pro_list li:hover{
     -moz-box-shadow:0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);

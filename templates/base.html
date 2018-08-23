@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-4.0.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/snippet/nav-bar.css' %}">
     <script src="{% static 'js/fontawesome-all.js' %}"></script>    
     <script src="{% static 'js/jquery.js' %}"></script>
     {% block staticfiles %}{% endblock staticfiles %}
@@ -15,75 +17,86 @@
 <body style="margin:0;">
 
     <!-- Navbar -->
-    <div id="nav_bar">
-        <div id="nav_left">
-            <a href="{% url 'mainboard:all_mainboards' %}">COMPUTER SPEC</a>
-        </div>
-        <div id="search">
-            <input type="text" name="search" size="25"/>
-            <p>Search</p>
-        </div>
-        <div id="nav_right">
-            <ul id='nav_ul'>
-                <li id='drop_p_form_butt'>
-                    <a href="#">ADD PRODUCT</a>
-                    <div id='add_pro_drop' class='display add_pro_drop_shadow'>
-                        <ul>
-                            <li>
-                                <a href="{% url 'mainboard:mainboard_form' %}">
-                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/mainboard.png' %}" alt="mainboard" width='30'></p>
-                                    <p>MAINBOARD</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/cpu.png' %}" alt="cpu" width='30'></p>
-                                    <p>CPU</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/video-card.png' %}" alt="graphic card" width='30'></p>
-                                    <p>GRAPHIC CARD</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <p class='drop_f_logo'><img src="{% static 'imgs/logo/product_form/ram.png' %}" alt="RAM" width='30'></p>
-                                    <p>RAM</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+    <div id="main">
+        <div class="container">
+            {% comment %} <div  style="margin-top:150px;margin-bottom:30px;text-align:center;"> {% endcomment %}
+            </div>
+            <nav>
+            <div class="nav-fostrap">
+                <ul>
+                <li><a href="/">COMPUTER SPEC</a></li>
+                <li><a href="javascript:void(0)">ADD PRODUCT<span class="arrow-down"></span></a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="{% url 'mainboard:mainboard_form' %}">
+                                <p><img src="{% static 'imgs/logo/product_form/mainboard.png' %}" width='30' alt="est" srcset=""></p>
+                                <p>MOTHERBOARD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p><img src="{% static 'imgs/logo/product_form/cpu.png' %}" width='30' alt="est" srcset=""></p>
+                                <p>CPU</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p><img src="{% static 'imgs/logo/product_form/video-card.png' %}" width='30' alt="est" srcset=""></p>
+                                <p>GRAPHIC CARD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p><img src="{% static 'imgs/logo/product_form/ram.png' %}" width='30' alt="est" srcset=""></p>
+                                <p>RAM</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li><a href="/">MOTHERBOARD</a></li>
                 <li><a href="{% url 'cpu:all_cpu' %}">CPU</a></li>
                 <li><a href="{% url 'graphic:all_graphic' %}">GRAPHIC CARD</a></li>
                 <li><a href="{% url 'ram:all_ram' %}">RAM</a></li>
-            </ul>
+                </ul>
+            </div>
+            <div class="nav-bg-fostrap">
+                <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
+                <a href="" class="title-mobile">Fostrap</a>
+            </div>
+            </nav>
+            <div class='content'>
+                <div id="body">
+                        {% block content %}{% endblock content %}
+                </div>
+                <footer>
+                    <p id="v_us"><u>Visit Us : </u></p>
+                        <p id="social">
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-google-plus-g"></i></a>
+                        </p>
+                    <hr style="border-color:#95989A" />
+                    <p id="cr">© 1996-2018, Computerspec.com, Inc All rights reserved.</p>
+                </footer>    
+            </div>
         </div>
     </div>
     
     <!-- Main content goes hear -->
-    <div id="body">
-        {% block content %}{% endblock content %}
-    </div>
-    <footer>
-        <p id="v_us"><u>Visit Us : </u></p>
-            <p id="social">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-google-plus-g"></i></a>
-            </p>
-        <hr style="border-color:#95989A" />
-        <p id="cr">© 1996-2018, Computerspec.com, Inc All rights reserved.</p>
-    </footer>
+    
     <script>
             $('#drop_p_form_butt').mouseover(function(){
                 $(this.children[1]).removeClass('display');
             }).mouseout(function(){
                 $(this.children[1]).addClass('display');           
             })
+
+
+            $('.navbar-fostrap').click(function(){
+                $('.nav-fostrap').toggleClass('visible');
+                $('body').toggleClass('cover-bg');
+            });
     </script>
 </body>
 

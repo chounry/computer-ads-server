@@ -4,7 +4,7 @@ a{text-decoration: none;}
 ul{list-style: none !important;padding:0;}
 .display{display: none !important;}
 
-#body{margin:auto;min-height: 500px;}
+#body{margin:auto;width:1350px;min-height: 500px;}
 .pro_detail{width: 98%;margin: auto;}
 
 #nav_bar{background-color: #348899;overflow: hidden;min-width:1300px;}
