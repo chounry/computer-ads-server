@@ -4,14 +4,11 @@
 {% load bootstrap %}
 {% block title %}Computer Spec | Add Mainboard Product{% endblock title %}
 {% block staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/forms/pro_form_base.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    {% comment %} <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'forms/pro_form_base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
 {% block form_static %}
 {% endblock form_static %}
 {% endblock staticfiles %}
@@ -22,7 +19,7 @@
         
         <div id="inner_wrapper">
             <div id="form_l_grid">
-                <div class='form_pro_menu box' id='add_pro_drop'>
+                <div class='form_pro_menu box' id='form_add_menu'>
                     <ul>
                         <li>
                             <a href="{% url 'mainboard:mainboard_form' %}">
@@ -71,28 +68,24 @@
                     <div id="r_r_t_grid" class='box'>
                         <p class='form_title'>Market</p>
                         <div class='market-each-box'>
-                            <div class="drop_d_input">
-                                <div class="">
-                                    {{ market_form  }}
+                            {{ market_form | bootstrap}}
+
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" name='prize' placeholder="Amount">
                                 </div>
                             </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">$</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Price" aria-label="Amount (to the nearest dollar)" name='price'>
-                                <div class="input-group-append">
-                                </div>
+                            <div class="form-group">
+                                <input type="url" class="form-control" name='link' placeholder="URL">
                             </div>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Link to Product" aria-label="" name='link'>
-                                <div class="input-group-append">
-                                </div>
-                            </div>
+
                             <hr style="border:1px solid #aaa">
                         </div>
-                        <div class='add_form_butt'>
-                            <a class='add_butt' href=""><p style="color:green;font-size:14px;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Another Market</p></a>
+                        <div id='market_form_btn'>
+                            <p id='add_market_btn'><i class="fas fa-plus">&nbsp;</i>Add market</p>
+                            <p id='remove_market_btn'><i class="fas fa-minus">&nbsp;</i>remove</p>
                         </div>
                     </div>
                     
@@ -108,7 +101,7 @@
                                 <a>
                                     <p style="color:green;"><i class="fas fa-plus"></i></p>
                                     <div>
-                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='img'>
+                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='image'>
                                     </div>
                                 </a>
                             </div>
@@ -116,7 +109,7 @@
                                 <a>
                                     <p style="color:green;"><i class="fas fa-plus"></i></p>
                                     <div>
-                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='img'>
+                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='image'>
                                     </div>
                                 </a>
                             </div>
@@ -124,7 +117,7 @@
                                 <a>
                                     <p style="color:green;"><i class="fas fa-plus"></i></p>
                                     <div>
-                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='img'>
+                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='image'>
                                     </div>
                                 </a>
                             </div>
@@ -132,7 +125,7 @@
                                 <a>
                                     <p style="color:green;"><i class="fas fa-plus"></i></p>
                                     <div>
-                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='img'>
+                                        <input type="file" accept="image/jpeg,image/gif,image/png" name='image'>
                                     </div>
                                 </a>
                             </div>
@@ -142,30 +135,9 @@
             </form>
         </div>
     </div>
-    <script>
-        // init page
-        init_page()
-
-        function init_page(){            
-            var input_files = $('input[type="file"]')
-            input_files.css('display','none');           
-        }
-
-        $('div.form_img_box').click(function(e){
-            var input_file = $(this).find("input[type=file]");
-            var a_tag = $(this).find('a');
-            if (!$(e.target).is('input[type=file]')) {
-                input_file.trigger('click');
-            }
-            input_file.change(function(){
-                var reader = new FileReader()
-                reader.readAsDataURL(input_file[0].files[0])
-                reader.onload = function(){
-                    a_tag.css("background-image","url('"+ reader.result +"')");
-                }
-            })
-        })
-    </script>
+    {% block scripts %}
+        <script src="{% static 'forms/pro_form_base.js' %}"></script>
+    {% endblock scripts %}
     {{ info_form.media }}
 {% endblock content %}
 

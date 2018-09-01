@@ -78,8 +78,8 @@ class Mainboard_market(models.Model):
     link = models.URLField(max_length=2000)
     prize = models.DecimalField(max_digits=7,decimal_places=2)
 
-    mainboard = models.OneToOneField(Mainboard_info,on_delete=models.CASCADE)
-    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
+    mainboard = models.ForeignKey(Mainboard_info,on_delete=models.CASCADE)
+    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
 
     
 

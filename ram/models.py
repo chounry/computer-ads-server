@@ -81,5 +81,5 @@ class Memory_market(models.Model):
     prize = models.DecimalField(max_digits=7,decimal_places=2)  
     quntity = models.PositiveSmallIntegerField()  
 
-    memory = models.OneToOneField(Memory_info,on_delete=models.CASCADE)
-    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
+    memory = models.ForeignKey(Memory_info,on_delete=models.CASCADE)
+    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)

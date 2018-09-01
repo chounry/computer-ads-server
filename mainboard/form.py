@@ -21,13 +21,14 @@ class MainboardMarketForm(forms.ModelForm):
 
     class Meta:
         model = Mainboard_market
-        fields = '__all__'
+        exclude = ['mainboard']
         widgets = {
-            'market':forms.Select(attrs={'class':'selectpicker mb-3','data-width':'100%'})
+            'market':forms.Select(attrs={'class':'mb-3','data-width':'100%','id':''})
         }
     
 class MainboardImgForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = '__all__'
+        exclude = ['mainboard']
+        
     

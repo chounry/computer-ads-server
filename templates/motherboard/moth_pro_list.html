@@ -1,0 +1,302 @@
+
+{% extends "base.html" %}
+{% load static %}       
+{% block staticfiles %}     
+    <link rel="stylesheet" href="{% static 'css/pro_list_base.css' %}">
+{% endblock staticfiles %}
+{% block content %}
+    <div id="body">
+        <div id="left_gr">
+            <div id="title-tag">
+                <h4>MOTHERBOARD</h4>
+                <div class='filter-nav-btn' id="go-filter-btn">
+                    <div>Filter</div>
+                    <div><i class="fas fa-angle-right"></i></div>
+                </div>
+                <div id="filter-things">
+                    <ul>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">ATX</div>
+                        </li>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">Micro ATX</div>
+                        </li>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">LGA1151</div>
+                        </li>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">Intel</div>
+                        </li>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">ATX</div>
+                        </li>
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">Micro ATX</div>
+                        </li>
+                        
+                    </ul>
+                    <!-- <div id="shotcut-filter">
+                        <select name="filter" id="select-filter-box">
+                            <option value="Most "></option>
+                        </select>
+                    </div> -->
+                </div>
+            </div>
+            <div class="pro_list_container">
+                <ul>
+                    {% for moth in all_moths %}                    
+                        <li>
+                            <div class="pro_img">
+                                <a href="{{ moth.get_absolute_url }}">
+                                    <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="pro_cont">
+                                <p class="pro_title"><a href="{{ moth.get_absolute_url }}">{{ moth.name }} </a></p>
+                                <div class="summary_spec">
+                                    <p><small>{{ moth.socket_type.name }}</small></p>
+                                </div>
+                                <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
+                                <div class="pro_share">
+                                    <a href=""><i class="fab fa-facebook"></i></a>
+                                    <a href=""><i class="fab fa-google-plus-square"></i></a>
+                                    <a href=""><i class="fab fa-twitter-square"></i></a>
+                                </div>
+                                <div class="price-check">
+                                    <p>14.99$</p>
+                                    <p><a href="">CHECK IT OUT</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+
+                    {% comment %} <li>
+                        <div class="pro_img">
+                            <a href="{{ graphic.get_absolute_url }}">
+                                <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                            </a>
+                        </div>
+                        <hr>
+                        <div class="pro_cont">
+                            <p class="pro_title"><a href="{{ graphic.get_absolute_url }}">{{ graphic.name }} {{ graphic.mem_inter_width }} </a></p>
+                            <div class="summary_spec">
+                                <p><small>{{ graphic.processor.name }} : {{ graphic.num_of_core }}</small></p>
+                                <p><small>Cock Speed : {{ graphic.core_clock }}</small></p>
+                            </div>
+                            <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
+                            <div class="pro_share">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-google-plus-square"></i></a>
+                                <a href=""><i class="fab fa-twitter-square"></i></a>
+                            </div>
+                            <div class="price-check">
+                                <p>14.99$</p>
+                                <p><a href="">CHECK IT OUT</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pro_img">
+                            <a href="{{ graphic.get_absolute_url }}">
+                                <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                            </a>
+                        </div>
+                        <hr>
+                        <div class="pro_cont">
+                            <p class="pro_title"><a href="{{ graphic.get_absolute_url }}">{{ graphic.name }} {{ graphic.mem_inter_width }} </a></p>
+                            <div class="summary_spec">
+                                <p><small>{{ graphic.processor.name }} : {{ graphic.num_of_core }}</small></p>
+                                <p><small>Cock Speed : {{ graphic.core_clock }}</small></p>
+                            </div>
+                            <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
+                            <div class="pro_share">
+                                <a href=""><i class="fab fa-facebook"></i></a>
+                                <a href=""><i class="fab fa-google-plus-square"></i></a>
+                                <a href=""><i class="fab fa-twitter-square"></i></a>
+                            </div>
+                            <div class="price-check">
+                                <p>14.99$</p>
+                                <p><a href="">CHECK IT OUT</a></p>
+                            </div>
+                        </div>
+                    </li> {% endcomment %}
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Filter Section -->
+        <div id="right_gr">
+            <div id="nth_head"></div>
+            <hr>
+            <div id="filter_cont">
+                <form action="" method="get">
+                    <div class="each_filter_cont">
+                        <p>Motherboard Form Factor :</p>
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ATX
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;Micro ATX
+                            </li>
+        
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;Mouse ATX
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
+                            </li> 
+                            <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
+                        </ul>
+                    </div>
+        
+                    <div class="each_filter_cont">
+                        <p>Socket Type :</p>
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1151
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1155
+                            </li>
+        
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1156
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;MA501
+                            </li>
+                            <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
+                        </ul>
+                    </div>
+        
+                    <div class="each_filter_cont">
+                        <p>Brand :</p>
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ASUS
+                            </li>
+        
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ACER
+                            </li>
+                            <li>
+                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ALIEN
+                            </li>
+                            <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="filter-window">
+            <form action="" method="get">
+                <div class='filter-nav-btn ' id="top-filter-btn">
+                    <div id="back-filter-btn"> 
+                        <div><i class="fas fa-angle-left"></i></div>
+                        <div>Back</div>
+                    </div>
+                    <div class="apply-filter-btn apply-filter-btn-in">
+                        <button class="btn btn-md" type="reset">Reset</button>
+                        <button class="btn btn-md" type="submit">Go</button>
+                    </div>
+                </div>
+            <hr style="margin-top:10px;">
+            <div id="filter_cont">
+                <div class="each_filter_cont">
+                    <p>Motherboard Form Factor :</p>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;ATX
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;Micro ATX
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;Mouse ATX
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="each_filter_cont">
+                    <p>Socket Type :</p>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1151
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1155
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1156
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;MA501
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="each_filter_cont">
+                    <p>Brand :</p>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;ASUS
+                        </li>
+    
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;ACER
+                        </li>
+                        <li>
+                            <input type="checkbox" name="atx"/>&nbsp; &nbsp;ALIEN
+                        </li>
+                    </ul>
+                </div>
+                <!-- <input type="submit" name="submit" value="GO"> -->
+                <div class="apply-filter-btn-in apply-filter-btn" style="margin-top:15px;text-align: center;">
+                    <button class="btn btn-md" type="reset">Reset</button>
+                    <button class="btn btn-md" type="submit">Go</button>
+                </div>     
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    
+    <script>
+        (function($) {
+            var filter_btn = $("#go-filter-btn > div");
+            var back_filter_btn = $("#back-filter-btn");
+            var filter_window = $("#filter-window");
+
+            filter_btn.click(function(){
+                filter_window.css("left",0);
+            })
+            back_filter_btn.click(function(){
+                filter_window.css("left","100%");
+            })
+
+        })(jQuery);
+
+    </script>
+{% endblock scripts %}

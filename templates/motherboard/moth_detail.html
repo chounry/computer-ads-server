@@ -1,187 +1,1183 @@
-<!DOCTYPE html>
+
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Computer Spec | Motherboard Detail{% endblock %}
 {% block staticfiles %}
-		<link rel="stylesheet" href="{% static 'css/pro_detail_base.css' %}">
-		<script src="{% static 'js/pro_detail_base.js' %}"></script>
-{% endblock staticfiles %}
+    <link rel="stylesheet" href="{% static 'snippet/css/pn-slide-container.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pro_detail-base.css' %}">
+{% endblock staticfiles %}     
 {% block content %}
-<!-- Producute main title -->
-<div class="pro_detail">
-	<h2>{{ mainboard.company.name}} - {{ mainboard.name }}</h2>
-	<hr />
+    <div id="detail-main">
+        <p>{{ mainboard.company.name}} - {{ mainboard.name }}</p>
+        <hr />
+    
+        <div id="m_bottom">
+            <div id="right_grid">
+                <div id="r_g_up">
+                    <!-- share logo and rate stars -->
+                    <div id="sh_rate">
+                        <div>
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-google-plus-square"></i>
+                            <i class="fab fa-twitter-square"></i>
+                        </div>
+                        <div>
+                            <span>Rate stars</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Sliding picture -->
+                    <div id="border_right">
+                        <div id="sli_pic">
+                            <div data-to="left"><p> <i class="fas fa-angle-left"></i></p></div>
+                            <div data-to="right"><p> <i class="fas fa-angle-right"></i></p></div>
+                        </div>
+                    </div>
+                    <div id="pho_change">
+                        <ul>
+                            <li><img src="imgs/1.jpg" data-pos="1" width="100%" alt=""/></li>
+                            <li><img src="imgs/2.jpg" data-pos="2" width="100%" alt=""/></li>
+                            <li><img src="imgs/3.jpg" data-pos="3" width="100%" alt=""/></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Available market for product -->
+                <div id="r_g_bottom">
+                    <table id="market">
+                        <tr>
+                            <td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="#"><img src="imgs/newegg.png" width="100" alt="newegg logo"/></a></td>
+                            <td></td>
+                            <td align="right" class="market_cost">14.99$</td>
+                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="#"><img src="imgs/ebay.png" width="100" alt="amazon logo"/></a></td>
+                            <td></td>
+                            <td align="right" class="market_cost">14.99$</td>
+                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="#"><img src="imgs/amazon.png" width="100" alt="ebay logo"/></a></td>
+                            <td></td>
+                            <td align="right" class="market_cost">14.99$</td>
+                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <div id="left_grid">
+                <div style="margin-top:36px;"></div>
+                <div id="lef_m_grid">
+                    <div id="lef_lef_gr">
+                        <div id="spec-table-container">
+                            <div id="first-display">
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Socket Type
+                                    </div>
+                                    <div class="col2">
+                                        Intel 2nd Generation, Core i7, Core i5
+                                        , Core i3, Pentium (Dual Core)
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Socket Type
+                                    </div>
+                                    <div class="col2">
+                                        1151
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        CPU
+                                    </div>
+                                    <div class="col2">
+                                        
+                                        AMD Ryzen™ 2nd Generation processors<br>
+                                        AMD Ryzen™ with Radeon™ Vega Graphics processors<br>
+                                        AMD Ryzen™ 1st Generation processors<br>
 
-	<div id="m_bottom">
-		<div id="right_grid">
-			<div id="r_g_up">
-				<!-- share logo and rate stars -->
-				<div id="sh_rate">
-					<div>
-						<i class="fab fa-facebook"></i>
-						<i class="fab fa-google-plus-square"></i>
-						<i class="fab fa-twitter-square"></i>
-					</div>
-					<div>
-						<span>Rate stars</span>
-					</div>
-				</div>
-				
-				<!-- Sliding picture -->
-				<div id="border_right">
-					<div id="sli_pic">
-							<div data-to="left"><i class="fas fa-angle-left"></i></div>
-							<div data-to="right"><i class="fas fa-angle-right"></i></div>
-					</div>
-				</div>
-				<div id="pho_change">
-					<ul>
-						<li><img src="{% static 'imgs/moth1.jpg' %}" data-pos="1" width="100%" alt=""/></li>
-						<li><img src="{% static 'imgs/moth.png' %}" data-pos="2" width="100%" alt=""/></li>
-						<li><img src="{% static 'imgs/moth2.jpg' %}" data-pos="3" width="100%" alt=""/></li>
-					</ul>
-				</div>
-			</div>
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Socket Type
+                                    </div>
+                                    <div class="col2">
+                                        1x PCI Express x16<br>
+                                        2x PCI Express x1<br>
+                                        1x PCI<br>
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Memory
+                                    </div>
+                                    <div class="col2">
+                                        
+                                        4 x DDR4 DIMM sockets supporting up to 64 GB of system memory<br>
+                                        Dual channel memory architecture<br>
+                                        Support for DDR4 3200(O.C.)/2933/2667/2400/2133 MHz memory modules<br>
+                                        Support for ECC Un-buffered DIMM 1Rx8/2Rx8 memory modules (operate in non-ECC mode)<br>
+                                        Support for non-ECC Un-buffered DIMM 1Rx8/2Rx8/1Rx16 memory modules<br>
+                                        Support for Extreme Memory Profile (XMP) memory modules<br>
 
-			<!-- Available market for product -->
-			<div id="r_g_bottom">
-				<table id="market">
-					<tr>
-						<td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/newegg-logo.png" width="100" alt="newegg logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"><div class="buy_logo"buy_logo>Check</div></a></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/amazon-logo1.png" width="100" alt="amazon logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"></a><div class="buy_logo">Check</div></a></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/ebay-logo1.png" width="100" alt="ebay logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Onboard Graphic
+                                    </div>
+                                    <div class="col2">
+                                        
+                                        1 x DVI-D port, supporting a maximum resolution of 1920x1200@60 Hz<br>
+                                        * The DVI-D port does not support D-Sub connection by adapter.<br>
+                                        1 x HDMI port, supporting a maximum resolution of 4096x2160@60 Hz<br>
+                                        * Support for HDMI 2.0 version and HDCP 2.2.<br>
+                                        * Actual support may vary by CPU.<br>
+                                        Maximum shared memory of 16 GB<br>
 
-		<div id="left_grid">
-			<div style="margin-top:30px;"></div>
-			<div id="lef_m_grid">
-				<div id="lef_lef_gr">
-					<div style="background-color:white;">
-						<!-- Specificaion table -->
-						<table>
-							<tr>
-								<td><span>Socket Type</span></td>
-								<td align="center">{{ mainboard.socket_type.name }}</td>
-							</tr>
-							<tr>
-								<td><span>CPU</span></td>
-								<td align="center">{{ mainboard.cpu_des }}</td>
-							</tr>
-							<tr>
-								<td><span>Memory</span></td>
-								<td align="center">{{ mainboard.memmory_des }}</td>
-							</tr>
-							<tr>
-								<td><span>Chipset</span></td>
-								<td align="center">{{ mainboard.chipset.name }}</td>
-							</tr>    
-							<tr>
-								<td><span>Expansion Slots</span></td>
-								<td align="center">{{ mainboard.expand_slot_des }}</td>
-							</tr>
-							<tr>
-								<td><span>Storage</span></td>
-								<td align="center">{{ mainboard.storage_des }}</td>
-							</tr>
-							<tr>
-								<td><span>Audio</span></td>
-								<td align="center">{{ mainboard.audio_des }}</td>
-							</tr>
-							<tr id="tr_no_border">
-								<td><span>Rear Panel</span></td>
-								<td align="center">{{mainboard.rear_panel_des }}</td>
-							</tr>                                                    
-						</table>
-					</div>
-				</div>
-			
-				<!-- Supported product section -->
-				<div id="lef_right_gr">
-					<div class="recom">
-						<p>SUPPORTED CPU</p>
-						<div class="recom_m_box">
-							<!-- Button left -->
-							<div class="sli_cpu" data-to="left"><i class="fas fa-angle-left"></i></div>
+                                    </div>
+                                </div>
+                                <div class="row-container" id="continue-display-btn">
+                                    <div class="col1">
+                                        Audio
+                                    </div>
+                                    <div class="col2">
+                                        
 
-							<!-- Main box store all products -->
-							<div class="all_pro_cont">
-								<ul>
-									<li>
-										<div class="pro_box">
-											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
-												</a>
-											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p>
-														Intel i5-2400- 3.4GHz- Cache : 4MB - 4Cores
-												</p>
-											</a></div>
-											<p class="read_spec"><a href="#" >Read Spec</a></p>
-											<div>
-												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="pro_box">
-											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
-												<a href="">
-											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p >
-														Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores
-												</p>
-											</a></div>
-											<p class="read_spec"><a href="#">Read Spec</a></p>
-											<div>
-												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
-											</div>
-										</div>
-									</li>
+                                        Realtek® ALC1220-VB codec<br>
+                                        High Definition Audio<br>
+                                        2/4/5.1/7.1-channel<br>
+                                        Support for S/PDIF Out<br>
 
-								</ul>
-							</div>
-							<!-- button right -->
-							<div class="sli_cpu" data-to="right">
-								<i class="fas fa-angle-right"></i>                        
-							</div>
-						</div>
-						<!-- End each supported product -->
-					</div>
-				</div>
-			</div>
-			<!-- End left main grid -->
-		</div>
-		<!-- End Specificaiton table -->
-	</div>
-</div>
-<script src="{% static 'js/moth_detail.js' %}"></script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="second-display">
+                                
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Expansion Slot
+                                    </div>
+                                    <div class="col2">
+                                        <ol>
+
+                                            <li> 1 x PCI Express x16 slot, running at x16 (PCIEX16)</li>
+                                            * Actual support may vary by CPU.<br>
+                                            * For optimum performance, if only one PCI Express graphics card is to be installed, be sure to install it in the PCIEX16 slot.<br>
+                                            <li>(The PCIEX16 slot conforms to PCI Express 3.0 standard.)</li>
+                                            1 x PCI Express x16 slot, running at x4 (PCIEX4)
+                                            * The PCIEX4 slot shares bandwidth with the PCIEX1_1 and PCIEX1_2 slots. The PCIEX4 slot operates at up to x2 mode when the PCIEX1_1/PCIEX1_2 slot is populated. The PCIEX4 slot operates at up to x4 mode when both of the PCIEX1_1 and PCIEX1_2 slots are empty.
+                                            <li>1 x PCI Express x16 slot, running at x1 (PCIEX1_2)</li>
+                                            <li>1 x PCI Express x1 slot (PCIEX1_1)</li>
+                                            <li>(The PCIEX4 and PCIEX1 slots conform to PCI Express 2.0 standard.)</li>
+                                            <li>(The PCIEX4 and PCIEX1 slots conform to PCI Express 2.0 standard.)</li>
+                                            <li>1 x M.2 Socket 1 connector for a wireless communication module (M2_WIFI)</li>
+                                            * B450 AORUS PRO WIFI includes the wireless communication module.<br>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Multi-Graphic Card
+                                    </div>
+                                    <div class="col2">
+                                        Support for AMD Quad-GPU CrossFire™ and 2-Way AMD CrossFire™ technologies
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Internal I/O Connectors
+                                    </div>
+                                    <div class="col2">
+                                        
+                                        1 x 24-pin ATX main power connector<br>
+                                        1 x 8-pin ATX 12V power connector<br>
+                                        2 x M.2 Socket 3 connectors<br>
+                                        6 x SATA 6Gb/s connectors<br>
+                                        1 x CPU fan header<br>
+                                        1 x water cooling CPU fan header<br>
+                                        2 x system fan headers<br>
+                                        1 x system fan/water cooling pump header<br>
+                                        1 x CPU cooler LED strip/RGB LED strip header<br>
+                                        2 x digital LED strip headers<br>
+                                        2 x digital LED strip power select jumpers<br>
+                                        1 x RGB (RGBW) LED strip header<br>
+                                        1 x front panel header<br>
+                                        1 x front panel audio header<br>
+                                        1 x S/PDIF Out header<br>
+                                        1 x USB 3.1 Gen 1 header<br>
+                                        2 x USB 2.0/1.1 headers<br>
+                                        1 x Trusted Platform Module (TPM) header (2x10 pin, for the GC-TPM2.0 module only)<br>
+                                        1 x Clear CMOS jumper<br>
+
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                    Rear Panel Connectors
+                                    </div>
+                                    <div class="col2">
+                                    1 x HDMI port <br>
+                                    2 x SMA antenna connectors (1T1R)<br>
+                                    1 x DVI-D port<br>
+                                    4 x USB 3.1 Gen 1 ports<br>
+                                    1 x USB Type-C™ port, with USB 3.1 Gen 2 support<br>
+                                    1 x USB 3.1 Gen 2 Type-A port (red)<br>
+                                    1 x RJ-45 port<br>
+                                    1 x optical S/PDIF Out connector<br>
+                                    5 x audio jacks<br>
+
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Form Factor
+                                    </div>
+                                    <div class="col2">
+                                        ATX Form Factor; 30.5cm x 24.4cm
+                                    </div>
+                                </div>
+                                <div class="row-container " id="last-row-container">
+                                    <div class="col1">
+                                        Multi-Graphic Card
+                                    </div>
+                                    <div class="col2">
+                                        Support for AMD Quad-GPU CrossFire™ and 2-Way AMD CrossFire™ technologies
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End left main grid -->
+            </div>
+            <!-- End Specificaiton table -->
+            <div id="all_support_pro">
+                <div class="support_pro">
+                    <p>SUPPORTED CPU</p>
+                    <div class="pn-ProductNav_Wrapper">
+                        <nav id="" class="pn-ProductNav pnProductNav">
+                            <div id="" class="pn-ProductNav_Contents pnProductNavContents">
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>      
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>                         
+                            </div>
+                            
+                        </nav>
+                        <button  class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+                        </button>
+                        <button  class="pn-Advancer pn-Advancer_Right pnAdvancerRight" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="support_pro">
+                    <p>SUPPORTED RAM</p>
+                    <div class="pn-ProductNav_Wrapper">
+                        <nav id='' class="pn-ProductNav pnProductNav">
+                            <div id="" class="pn-ProductNav_Contents pnProductNavContents">
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>      
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>                         
+                            </div>
+                            
+                        </nav>
+                        <button id="" class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+                        </button>
+                        <button id="" class="pn-Advancer pn-Advancer_Right pnAdvancerRight" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="support_pro">
+                    <p>SUPPORTED GRAPHIC CARD</p>
+                    <div class="pn-ProductNav_Wrapper">
+                        <nav id="" class="pn-ProductNav pnProductNav">
+                            <div id="" class="pn-ProductNav_Contents pnProductNavContents">
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>      
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="imgs/3.jpg" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="#" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>                         
+                            </div>
+                            
+                        </nav>
+                        <button id="" class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+                        </button>
+                        <button id="" class="pn-Advancer pn-Advancer_Right pnAdvancerRight" type="button">
+                            <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
-			
+{% block scripts %}
+    <script src="{% static 'snippet/js/pn-slide-container.js' %}"></script>
+    <script src="{% static 'js/pro_detail_base.js' %}"></script>       
+{% endblock scripts %}

@@ -84,7 +84,7 @@ class CPU_market(models.Model):
     link = models.URLField(max_length=2000)
     prize = models.DecimalField(max_digits=7,decimal_places=2)
     
-    cpu = models.OneToOneField(CPU_info,on_delete=models.CASCADE)
-    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
+    cpu = models.ForeignKey(CPU_info,on_delete=models.CASCADE)
+    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
 
     

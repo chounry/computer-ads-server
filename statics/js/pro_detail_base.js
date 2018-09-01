@@ -1,20 +1,37 @@
 $(document).ready(function(){
+
+	// --------- for fold the spec table
+	var continue_display_btn = $('#continue-display-btn');
+	var last_row_container = $('#last-row-container');
+
+	continue_display_btn.attr('display','false');
+	continue_display_btn.click(function(){
+		$('#second-display').css('display','unset');
+		continue_display_btn.removeAttr('id');
+		continue_display_btn.attr('display','true');
+	})
+
+	last_row_container.click(function(){
+		$("#second-display").css('display','none');
+		continue_display_btn.attr('id','continue-display-btn');
+		continue_display_btn.attr('display','false');
+	})
+
 	// ---------- Product picture slide --------------
 	var all_img = $("#pho_change ul li img");
 	var main_pic = $("#sli_pic");
-	console.log(all_img[0].currentSrc);
 	main_pic.css("background-image",`url('${all_img[0].currentSrc}')`);
 
 	var cur_img = 1;
 	var img_len = all_img.length;
 	var sli_button = $("#sli_pic div");
 
-	// set the background image for main_pic and border for 
-	// image that is seleted
 	function setImg(ele){
+		// set the background image for main_pic and border for image that is seleted
+
 		main_pic.css("background-image",`url('${ele.currentSrc}')`);
 		$(ele).parent().parent().children().attr("style","");
-		$(ele).parent().css("border-color","black");
+		$(ele).parent().css("border-color","#348899");
 	}
 
 	all_img.click(function(){
