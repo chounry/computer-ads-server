@@ -1,6 +1,6 @@
 {% extends "base.html" %}	
 {% load static %}
-{% load crispy_forms_tags %}
+
 {% load bootstrap %}
 {% block title %}Computer Spec | Add Mainboard Product{% endblock title %}
 {% block staticfiles %}
@@ -9,8 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 
-{% block form_static %}
-{% endblock form_static %}
+{% block form_staticfiels %}{% endblock form_staticfiels %}
 {% endblock staticfiles %}
 
 {% block content %}
@@ -48,16 +47,15 @@
                     </ul>
                 </div>
             </div>
-            <form action='' method="post" enctype="multipart/form-data" id="form_cente_right_gr">
+            <form action='' name='product_form' method="post" enctype="multipart/form-data" id="form_cente_right_gr">
                 {% csrf_token %}                       
                 <div id="r_l_grid">
                     <div id="pro_form_main" class='box'>
                         <p class="form_title">Mainboard{% block form_title %}{% endblock form_title %}</p>  <!-- Product Name -->
-                        
-                        {% block product_form %}
-                        
-                        {% endblock product_form %} <!-- Each product form -->
-                        
+                            {% block product_form %}
+
+                            {% endblock product_form %} <!-- Each product form -->
+
                         <p id='sub_btn_p'><input type="submit" value="SUBMIT" id='f_sub_btn'></p>
                     </div>
                     
@@ -135,10 +133,11 @@
             </form>
         </div>
     </div>
+    {{ info_form.media }}
+    {% endblock content %}
     {% block scripts %}
         <script src="{% static 'forms/pro_form_base.js' %}"></script>
     {% endblock scripts %}
-    {{ info_form.media }}
-{% endblock content %}
+
 
 

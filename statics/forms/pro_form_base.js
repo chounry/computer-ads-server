@@ -8,13 +8,11 @@ $(document).ready(function(){
     function init_page(){            
         var input_files = $('input[type="file"]');
         input_files.hide(); 
-        $('.control-label').remove();
+        $('.market-each-box .control-label').remove();
         market_form_box.find('input').attr('required','');
         market_form_box.remove();    
     }
 
-    $('#add_market_btn').unbind('click');
-    $('#remove_market_btn').unbind('click');
     $('#add_market_btn').click(function(e){
         if(!isMaketFormEmp()){
             var tmp = $(market_form_html).show();

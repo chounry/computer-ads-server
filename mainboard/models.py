@@ -49,7 +49,7 @@ class Mainboard_info(models.Model):
     storage_des = models.TextField("Storage Description",max_length=500,default='---')
     multi_gpu_des = models.TextField("Multi GPU",default='---')
     #  *************************
-    memmory_des = models.TextField("Memory Description",max_length=500)
+    memmory_des = models.TextField("Memory Description",max_length=500) # memory not memmory
     rear_panel_des = models.TextField("Rear Panel Description",max_length=1500)
     expand_slot_des = models.TextField("Expansion Slot Description",max_length=2000)
     audio_des = models.TextField("Audio Description",max_length=1000,default='---')
@@ -70,13 +70,13 @@ class Mainboard_info(models.Model):
         super(Mainboard_info,self).save(*args,**kwargs)
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='mainboard')
 
     mainboard = models.ForeignKey(Mainboard_info,on_delete=models.CASCADE)
 
 class Mainboard_market(models.Model):
     link = models.URLField(max_length=2000)
-    prize = models.DecimalField(max_digits=7,decimal_places=2)
+    prize = models.DecimalField(max_digits=7,decimal_places=2) # prize not prize
 
     mainboard = models.ForeignKey(Mainboard_info,on_delete=models.CASCADE)
     market = models.OneToOneField(Market_info,on_delete=models.CASCADE)

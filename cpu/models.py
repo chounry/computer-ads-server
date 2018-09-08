@@ -76,7 +76,7 @@ class CPU_info(models.Model):
         super(CPU_info,self).save(*args,**kwargs)
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='cpu')
 
     cpu = models.ForeignKey(CPU_info,on_delete=models.CASCADE)
 

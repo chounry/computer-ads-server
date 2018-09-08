@@ -4,9 +4,10 @@
 {% load static %}
 <!-- {% load crispy_forms_tags  %} -->
 {% load bootstrap %}
+{% load crispy_forms_tags %}
 {% block title %}Form | Mainbaord{% endblock title %}
 {% block form_static %}{% endblock form_static %}
 
 {% block product_form %}
-    {{ info_form | bootstrap }}
+    {{ info_form | crispy }}
 {% endblock product_form %}

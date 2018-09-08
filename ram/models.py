@@ -73,7 +73,7 @@ class Memory_info(models.Model):
         return self.mem_brand.name+ ' '+ self.series + ' ' + self.mem_tech.name + ' ' + self.get_mem_cap()+ ' '  + self.model_num
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='ram')
     ram = models.ForeignKey(Memory_info,on_delete=models.CASCADE)
 
 class Memory_market(models.Model):

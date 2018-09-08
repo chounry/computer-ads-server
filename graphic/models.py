@@ -86,7 +86,7 @@ class Graphic_info(models.Model):
         super(Graphic_info,self).save(*args,**kwargs) 
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='graphic')
 
     graphic = models.ForeignKey(Graphic_info,on_delete=models.CASCADE)
 
