@@ -11,6 +11,7 @@
 
 {% block form_staticfiels %}{% endblock form_staticfiels %}
 {% endblock staticfiles %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div id="main_wrapper">
@@ -52,9 +53,9 @@
                 <div id="r_l_grid">
                     <div id="pro_form_main" class='box'>
                         <p class="form_title">Mainboard{% block form_title %}{% endblock form_title %}</p>  <!-- Product Name -->
-                            {% block product_form %}
-
-                            {% endblock product_form %} <!-- Each product form -->
+                        {{ info_form | crispy }}
+                            {% comment %} {% block product_form %}                            
+                            {% endblock product_form %} <!-- Each product form --> {% endcomment %}
 
                         <p id='sub_btn_p'><input type="submit" value="SUBMIT" id='f_sub_btn'></p>
                     </div>

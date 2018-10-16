@@ -34,9 +34,9 @@
                     </div>
                     <div id="pho_change">
                         <ul>
-                            <li><img src="imgs/1.jpg" data-pos="1" width="100%" alt=""/></li>
-                            <li><img src="imgs/2.jpg" data-pos="2" width="100%" alt=""/></li>
-                            <li><img src="imgs/3.jpg" data-pos="3" width="100%" alt=""/></li>
+                            {% for img_instance in mainboard.image_set.all %}
+                                <li><img src="{{ img_instance.image.url }}" width="100%" alt=""/></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -47,24 +47,14 @@
                         <tr>
                             <td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
                         </tr>
-                        <tr>
-                            <td colspan="2"><a href="#"><img src="imgs/newegg.png" width="100" alt="newegg logo"/></a></td>
-                            <td></td>
-                            <td align="right" class="market_cost">14.99$</td>
-                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a href="#"><img src="imgs/ebay.png" width="100" alt="amazon logo"/></a></td>
-                            <td></td>
-                            <td align="right" class="market_cost">14.99$</td>
-                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a href="#"><img src="imgs/amazon.png" width="100" alt="ebay logo"/></a></td>
-                            <td></td>
-                            <td align="right" class="market_cost">14.99$</td>
-                            <td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
-                        </tr>
+                        {% for market in mainboard.mainboard_market_set.all %}
+                            <tr>
+                                <td colspan="2"><a target="_blank" href="{{ market.link }}"><img src="{{ market.market.img.url }}" width="100" alt="newegg logo"/></a></td>
+                                <td></td>
+                                <td align="right" class="market_cost">{{ market.prize }}$</td>
+                                <td align="right"><a target="_blank" href="{{ market.link }}"><div class="buy_logo">Check</div></a></td>
+                            </tr>
+                        {% endfor %}
                     </table>
                 </div>
             </div>

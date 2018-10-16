@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
-from django.forms import formset_factory,modelformset_factory
+from django.forms import modelformset_factory
 
 from .models import Mainboard_info
 from .models import Image, Mainboard_market
@@ -58,6 +58,8 @@ def handle_form(request):
             market_valid = m_formset.is_valid()
 
         info_ret_form = MainboardForm(request.POST)
+        print(m_formset.errors)
+        print(market_valid)
         if info_ret_form.is_valid() and market_valid:
             mainboard_instance = info_ret_form.save()
             
@@ -77,12 +79,13 @@ def handle_form(request):
                     img_instance = Image(image=f,mainboard=mainboard_instance)
                     img_instance.save()
         else:
-            # return the form with the last data
-            return render(request,'forms/moth.html',context = {'info_form' : info_ret_form,'market_form':market_form})
+            print('Not successful')
+            # return the form with the previous data
+            return render(request,'forms/moth_form.html',context = {'info_form' : info_ret_form,'market_form':market_form})
 
     context = {
         'info_form' : mainboard_form,
         'market_form' : market_form
     }
 
-    return render(request,'forms/moth.html',context)
+    return render(request,'forms/moth_form.html',context)

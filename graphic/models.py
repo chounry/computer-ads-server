@@ -95,5 +95,5 @@ class Graphic_market(models.Model):
     prize = models.DecimalField(max_digits=7,decimal_places=2)    
 
     graphic = models.ForeignKey(Graphic_info,on_delete=models.CASCADE)
-    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
+    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
 

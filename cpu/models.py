@@ -21,10 +21,7 @@ class Series(models.Model):
 
 class Num_of_core(models.Model):
     amount = models.PositiveSmallIntegerField()
-    name = models.CharField(blank=True, max_length=50,null=True)
     def __str__(self):
-        if(self.name):
-            return self.name + ' ' + str(self.amount)
         return str(self.amount)
 
 class CPU_brand(models.Model):
@@ -39,22 +36,21 @@ class Socket_type(models.Model):
 
 class CPU_info(models.Model):
 
-    cpu_model = models.ForeignKey(CPU_model,on_delete=models.CASCADE)
-    cpu_brand = models.ForeignKey(CPU_brand,on_delete=models.CASCADE)
+    cpu_model = models.ForeignKey(CPU_model,on_delete=models.CASCADE,verbose_name=u'Model')
+    cpu_brand = models.ForeignKey(CPU_brand,on_delete=models.CASCADE,verbose_name=u'Brand')
     vertical_segment = models.ForeignKey(Vertical_segment,on_delete=models.CASCADE)
-    series = models.ForeignKey(Series,on_delete=models.SET_NULL,null=True,blank=True)
-    num_of_core = models.ForeignKey(Num_of_core,on_delete=models.CASCADE,verbose_name=u'# of Cores')
+    num_of_core = models.ForeignKey(Num_of_core,on_delete=models.CASCADE,verbose_name=u'# of Cores') # change to normal int 
     socket_type = models.ForeignKey(Socket_type,on_delete=models.CASCADE)
     
 
-    name = models.CharField(help_text="Ex: Intel Core i5-3470.",max_length=100)
-    proc_num = models.CharField("Processor Number",help_text="3470 OR 860K OR FX-3202",max_length=30,null=True)
+    name = models.CharField(help_text="Ex: Intel Core i5-3470.",max_length=100,blank=True)
+    proc_num = models.CharField("Processor Number",help_text="i5-3470 OR 860K OR FX-3202",max_length=30,null=True)
     cmos = models.CharField("CMOS",help_text='**Unit: nm or ELSE',max_length=50,default='---')
     num_of_thread = models.CharField("Number of Threads",max_length=100,blank=True,default='---')
     base_fr = models.CharField("Base Frequency",max_length=50,help_text='**Unit: GHz')
     cache = models.CharField("Cache",max_length=100,help_text='**Unit: MB',default='---')
     tdp = models.CharField("Power Consumtion",max_length=50,help_text='**Unit: W',default='---')
-    max_memory = models.CharField(help_text='Unit: MB',max_length=100,blank=True,default='---')
+    max_memory = models.CharField(help_text='Unit: GB or MB',max_length=100,blank=True,default='---')
     num_of_mem_chann = models.PositiveSmallIntegerField("# of Memory Channels")
     max_mem_bandwidth = models.CharField("Max Memory bandwidth",max_length=50,help_text='**Unit: MB/s or GB/s',blank=True,default='---')
     memory_tech = models.ManyToManyField(Mem_tech)
@@ -85,6 +81,6 @@ class CPU_market(models.Model):
     prize = models.DecimalField(max_digits=7,decimal_places=2)
     
     cpu = models.ForeignKey(CPU_info,on_delete=models.CASCADE)
-    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
+    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
 
     

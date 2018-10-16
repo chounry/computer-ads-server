@@ -54,7 +54,7 @@ class Mainboard_info(models.Model):
     expand_slot_des = models.TextField("Expansion Slot Description",max_length=2000)
     audio_des = models.TextField("Audio Description",max_length=1000,default='---')
     interal_des = models.TextField("Interal I\O Connector",max_length=1500)
-    onboard_gpu_des = models.TextField("On Board GPU",max_length=40,default='---')
+    onboard_gpu_des = models.TextField("On Board GPU",default='---')
     slug = models.SlugField(unique=True,blank=True)
 
     expan_slot = models.ManyToManyField(Expansion_slot,verbose_name='Expansion Slot')
@@ -79,7 +79,7 @@ class Mainboard_market(models.Model):
     prize = models.DecimalField(max_digits=7,decimal_places=2) # prize not prize
 
     mainboard = models.ForeignKey(Mainboard_info,on_delete=models.CASCADE)
-    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
+    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)
 
     
 

@@ -25,7 +25,7 @@ SECRET_KEY = 'e545-u^(=#_c4ktd^vw2r($&xbs^!+qu9!(&2%w_jfmb@mw#$%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dal_select2',
     'crispy_forms',
     'bootstrapform',
+    'jet',
 
     'django.contrib.admin',
     'django.contrib.auth',

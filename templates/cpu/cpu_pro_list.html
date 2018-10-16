@@ -3,12 +3,13 @@
 {% load static %}       
 {% block staticfiles %}     
     <link rel="stylesheet" href="{% static 'css/pro_list_base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cpu/all_cpu.css' %}">
 {% endblock staticfiles %}
 {% block content %}
     <div id="body">
         <div id="left_gr">
             <div id="title-tag">
-                <h4>MOTHERBOARD</h4>
+                <h4>CPU</h4>
                 <div class='filter-nav-btn' id="go-filter-btn">
                     <div>Filter</div>
                     <div><i class="fas fa-angle-right"></i></div>
@@ -50,20 +51,23 @@
             </div>
             <div class="pro_list_container">
                 <ul>
-                    {% for moth in all_moths %}                    
+                    {% for cpu in all_cpus %}                    
                         <li>
                             <div class="pro_img">
-                                <a href="{{ moth.get_absolute_url }}">
-                                    <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                                <a href="{{ cpu.get_absolute_url }}">
+                                    <img src="{{ cpu.image_set.all.0.image.url }}" alt="" width="100%" />
                                 </a>
                             </div>
                             <hr>
                             <div class="pro_cont">
-                                <p class="pro_title"><a href="{{ moth.get_absolute_url }}">{{ moth.name }} </a></p>
+                                <p class="pro_title"><a href="{{ cpu.get_absolute_url }}">{{ cpu.name }} </a></p>
                                 <div class="summary_spec">
-                                    <p><small>{{ moth.socket_type.name }}</small></p>
+                                    <p><small>Socket Type : {{ cpu.socket_type.name }}</small></p>
+                                    <p><small># of Cores : {{ cpu.num_of_core.amount }}</small></p>
+                                    <p><small># of Threads : {{ cpu.num_of_thread }}</small></p>
+                                    <p><small>Cache : {{ cpu.cache }}</small></p>
                                 </div>
-                                <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
+                                <p class="to_spec"><a href="{{ cpu.get_absolute_url }}">Read Spec</a></p>
                                 <div class="pro_share">
                                     <a href=""><i class="fab fa-facebook"></i></a>
                                     <a href=""><i class="fab fa-google-plus-square"></i></a>

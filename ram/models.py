@@ -82,4 +82,4 @@ class Memory_market(models.Model):
     quntity = models.PositiveSmallIntegerField()  
 
     memory = models.ForeignKey(Memory_info,on_delete=models.CASCADE)
-    market = models.OneToOneField(Market_info,on_delete=models.CASCADE)
+    market = models.ForeignKey(Market_info,on_delete=models.CASCADE)

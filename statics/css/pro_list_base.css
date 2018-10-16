@@ -164,7 +164,7 @@ li p a:hover{text-decoration: underline;}
         display:grid;
         grid-template-columns: 40% 58%;
         grid-gap:2%;
-        height: unset;
+        height: unset !important;
     }
     .pro_list_container li hr{display:none;}
     li .pro_img{position: relative;width: unset;}

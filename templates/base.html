@@ -51,8 +51,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item"><a href="#">MOTHERBOARD</a></li>
-                    <li class="nav-item"><a href="#">CPU</a></li>
+                    <li class="nav-item"><a href="/">MOTHERBOARD</a></li>
+                    <li class="nav-item"><a href="{% url 'cpu:all_cpu' %}">CPU</a></li>
                     <li class="nav-item"><a href="#">RAM</a></li>
                     <li class="nav-item"><a href="#">GRAPHIC CARD</a></li>
 
@@ -64,7 +64,7 @@
                             <li role="separator" class="divider"></li>
 
                             <li><a href="{% url 'mainboard:mainboard_form' %}">MOTHERBOARD</a></li>
-                            <li><a href="#">CPU</a></li>
+                            <li><a href="{% url 'cpu:cpu_form' %}">CPU</a></li>
                             <li><a href="#">RAM</a></li>
                             <li><a href="#">GRAPHIC CARD</a></li>
                         </ul>

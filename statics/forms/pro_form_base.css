@@ -26,7 +26,7 @@
 #form_add_menu{position: relative !important;top:unset !important;}
 #form_add_menu ul{padding:0;}
 #form_add_menu ul li p{display:inline-block;}
-#form_add_menu ul a{font-weight: bold;width: 93% !important;text-decoration: none;color:black;}
+#form_add_menu ul a{font-weight: bold;display:inline-block;width: 100% !important;text-decoration: none;color:black;}
 #form_add_menu ul li a p:last-child{line-height: 3 !important;font-size: 12px;}
 #form_cente_right_gr{display: grid;grid-template-columns: 2fr 1fr;grid-gap: 8px;}
 #form_cente_right_gr input[type='text'], select {

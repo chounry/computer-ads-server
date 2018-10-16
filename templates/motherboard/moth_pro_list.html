@@ -54,14 +54,14 @@
                         <li>
                             <div class="pro_img">
                                 <a href="{{ moth.get_absolute_url }}">
-                                    <img src="../imgs/moth2.jpg" alt="" width="100%" />
+                                    <img src="{{ moth.image_set.all.1.image.url }}" alt="" width="100%" />
                                 </a>
                             </div>
                             <hr>
                             <div class="pro_cont">
                                 <p class="pro_title"><a href="{{ moth.get_absolute_url }}">{{ moth.name }} </a></p>
                                 <div class="summary_spec">
-                                    <p><small>{{ moth.socket_type.name }}</small></p>
+                                    <p><small>Socket Type : {{ moth.socket_type.name }}</small></p>
                                 </div>
                                 <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
                                 <div class="pro_share">
