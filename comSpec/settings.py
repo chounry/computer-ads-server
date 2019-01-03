@@ -25,7 +25,7 @@ SECRET_KEY = 'e545-u^(=#_c4ktd^vw2r($&xbs^!+qu9!(&2%w_jfmb@mw#$%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dal_select2',
     'crispy_forms',
     'bootstrapform',
+    'jet.dashboard',
     'jet',
 
     'django.contrib.admin',
@@ -136,6 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/statics/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

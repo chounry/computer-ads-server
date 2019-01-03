@@ -14,15 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, url
+from django.urls import path, include, re_path
 
 urlpatterns = [
-    url(r'^jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('',include('mainboard.urls')),
     path('cpu/',include('cpu.urls')),
     path('graphic/',include('graphic.urls')),
     path('ram/',include('ram.urls')),
+    
+
+    # for admin page... can't access
+    re_path(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    re_path(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
+
 ]
 
 from django.conf import settings
