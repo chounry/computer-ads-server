@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.forms import modelformset_factory
 
 from .models import Mainboard_info
+from cpu.models import CPU_info
+from ram.models import Memory_info
+from graphic.models import Graphic_info
 from .models import Image, Mainboard_market
 from .form import *
 
@@ -18,74 +21,90 @@ def get_all_moth(request): # homepage
 
 def get_moth_detail(request,slug):
     mainboard_inst = get_object_or_404(Mainboard_info,slug=slug)
+
+    supported_cpu = CPU_info.objects.filter(socket_type = mainboard_inst.socket_type)
+    supported_ram = Memory_info.objects.filter(mem_tech = mainboard_inst.mem_tech)
+    # print(mainboard_inst.expan_slot.all())
+    supported_gpu = Graphic_info.objects.filter(expansion_slot__in = mainboard_inst.expan_slot.all())
+    print(len(supported_gpu))
     context = {
-        "mainboard" : mainboard_inst
+        "mainboard" : mainboard_inst,
+        "supp_cpu" : supported_cpu,
+        "supp_ram" : supported_ram,
+        "supp_gpu" : supported_gpu
     }
     return render(request, 'motherboard/moth_detail.html',context=context)
+
+
+
+
+
+
+  
     
-def handle_form(request):
-    mainboard_form = MainboardForm()
-    market_form = MainboardMarketForm()['market']    
+# def handle_form(request):
+#     mainboard_form = MainboardForm()
+#     market_form = MainboardMarketForm()['market']    
 
-    if request.method == 'POST':
-        market = {
-            'market_id' : request.POST.getlist('market'),
-            'prize' : request.POST.getlist('prize'),
-            'link' : request.POST.getlist('link')
-        }
+#     if request.method == 'POST':
+#         market = {
+#             'market_id' : request.POST.getlist('market'),
+#             'prize' : request.POST.getlist('prize'),
+#             'link' : request.POST.getlist('link')
+#         }
 
-        market_valid = True 
-        m_formset = None # => In case there is no market form
+#         market_valid = True 
+#         m_formset = None # => In case there is no market form
 
-        if( market['market_id'] and market['prize'] and market['link']):
-            data = {
-                'form-TOTAL_FORMS' : str(len(market['prize'])),
-                'form-INITIAL_FORMS' : '0',
-                'form-MAX_NUM_FORMS' : '',
-                }
+#         if( market['market_id'] and market['prize'] and market['link']):
+#             data = {
+#                 'form-TOTAL_FORMS' : str(len(market['prize'])),
+#                 'form-INITIAL_FORMS' : '0',
+#                 'form-MAX_NUM_FORMS' : '',
+#                 }
 
-            z_market = zip(market['market_id'],market['prize'], market['link'])
-            for index,val in enumerate(z_market):
-                tmp = {
-                    "form-%d-link"%index : val[2],
-                    "form-%d-prize"%index : val[1],
-                    "form-%d-market"%index : val[0]
-                }
-                data.update(tmp)
+#             z_market = zip(market['market_id'],market['prize'], market['link'])
+#             for index,val in enumerate(z_market):
+#                 tmp = {
+#                     "form-%d-link"%index : val[2],
+#                     "form-%d-prize"%index : val[1],
+#                     "form-%d-market"%index : val[0]
+#                 }
+#                 data.update(tmp)
 
-            MarketFormset = modelformset_factory(Mainboard_market,form=MainboardMarketForm)
-            m_formset = MarketFormset(data)
-            market_valid = m_formset.is_valid()
+#             MarketFormset = modelformset_factory(Mainboard_market,form=MainboardMarketForm)
+#             m_formset = MarketFormset(data)
+#             market_valid = m_formset.is_valid()
 
-        info_ret_form = MainboardForm(request.POST)
-        print(m_formset.errors)
-        print(market_valid)
-        if info_ret_form.is_valid() and market_valid:
-            mainboard_instance = info_ret_form.save()
+#         info_ret_form = MainboardForm(request.POST)
+#         print(m_formset.errors)
+#         print(market_valid)
+#         if info_ret_form.is_valid() and market_valid:
+#             mainboard_instance = info_ret_form.save()
             
-            # if the market formset availble 
-            if m_formset:
-                for form in m_formset:
-                    market_instance = Mainboard_market(
-                        link  = form.cleaned_data['link'],
-                        prize = form.cleaned_data['prize'],
-                        mainboard = mainboard_instance,
-                        market = form.cleaned_data['market']
-                    )
-                    market_instance.save()
+#             # if the market formset availble 
+#             if m_formset:
+#                 for form in m_formset:
+#                     market_instance = Mainboard_market(
+#                         link  = form.cleaned_data['link'],
+#                         prize = form.cleaned_data['prize'],
+#                         mainboard = mainboard_instance,
+#                         market = form.cleaned_data['market']
+#                     )
+#                     market_instance.save()
 
-            if request.FILES:
-                for f in request.FILES.getlist('image'):
-                    img_instance = Image(image=f,mainboard=mainboard_instance)
-                    img_instance.save()
-        else:
-            print('Not successful')
-            # return the form with the previous data
-            return render(request,'forms/moth_form.html',context = {'info_form' : info_ret_form,'market_form':market_form})
+#             if request.FILES:
+#                 for f in request.FILES.getlist('image'):
+#                     img_instance = Image(image=f,mainboard=mainboard_instance)
+#                     img_instance.save()
+#         else:
+#             print('Not successful')
+#             # return the form with the previous data
+#             return render(request,'forms/moth_form.html',context = {'info_form' : info_ret_form,'market_form':market_form})
 
-    context = {
-        'info_form' : mainboard_form,
-        'market_form' : market_form
-    }
+#     context = {
+#         'info_form' : mainboard_form,
+#         'market_form' : market_form
+#     }
 
-    return render(request,'forms/moth_form.html',context)
+#     return render(request,'forms/moth_form.html',context)

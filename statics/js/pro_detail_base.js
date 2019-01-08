@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+	//<----------- markdown
+
+	var markdown_contents = $('.markdown-content');
+	markdown_contents.each((i, e) => {
+		var text = e.innerText;
+		var markedContent = marked(text);
+		console.log(markedContent);
+		$(e).html(markedContent);
+	});
+
+	// end markdown 
+
 	// --------- for fold the spec table
 	var continue_display_btn = $('#continue-display-btn');
 	var last_row_container = $('#last-row-container');

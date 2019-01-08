@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'market',
 
     #third party
-    'dal',
-    'dal_select2',
+    # 'dal',
+    # 'dal_select2',
     'crispy_forms',
     'bootstrapform',
     'jet.dashboard',

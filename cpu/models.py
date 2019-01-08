@@ -59,6 +59,13 @@ class CPU_info(models.Model):
     class Meta:
         verbose_name = "CPU Info"
 
+    def get_image(self):
+        try :
+            ret = self.image_set.all()[0].image.url
+        except :
+            ret = None;
+        return ret
+
     def __str__(self):
         return self.name
 

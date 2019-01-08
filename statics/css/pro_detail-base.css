@@ -132,6 +132,12 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
 }
 #spec-table-container ol{padding: 15px;}
 
+.markdown-content li{ 
+    list-style: disc;
+}
+.markdown-content > ul {
+    padding: 0;
+}
 
 .row-container {display:flex;}
 

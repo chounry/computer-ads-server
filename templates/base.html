@@ -57,19 +57,7 @@
                     <li class="nav-item"><a href="#">GRAPHIC CARD</a></li>
 
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD PRODCUT <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li role="separator" class="divider"></li>
 
-                            <li><a href="{% url 'mainboard:mainboard_form' %}">MOTHERBOARD</a></li>
-                            <li><a href="{% url 'cpu:cpu_form' %}">CPU</a></li>
-                            <li><a href="#">RAM</a></li>
-                            <li><a href="#">GRAPHIC CARD</a></li>
-                        </ul>
-                    </li>
-                </ul>
                 <form class="navbar-form navbar-right navbar-form-search " role="search" method='get' action="">
                     <div class="search-form-container hdn search-input-container" id="">
                         <div class="search-input-group">
@@ -86,7 +74,7 @@
             </div><!-- /.container-fluid -->
         </nav>  
         <!--/.Navbar-->
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.0/marked.min.js"></script>
         <div id="main">
             {% block content %}{% endblock content %}
         </div>

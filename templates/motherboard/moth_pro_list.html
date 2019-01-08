@@ -3,6 +3,7 @@
 {% load static %}       
 {% block staticfiles %}     
     <link rel="stylesheet" href="{% static 'css/pro_list_base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mainboard/mainboard_list.css' %}">
 {% endblock staticfiles %}
 {% block content %}
     <div id="body">
@@ -54,7 +55,8 @@
                         <li>
                             <div class="pro_img">
                                 <a href="{{ moth.get_absolute_url }}">
-                                    <img src="{{ moth.image_set.all.1.image.url }}" alt="" width="100%" />
+                                    <!-- <img src="{{ moth.image_set.all.1.image.url }}" alt="" width="100%" /> -->
+                                    <img src="{{ moth.get_image }}" alt="" width="100%" />
                                 </a>
                             </div>
                             <hr>

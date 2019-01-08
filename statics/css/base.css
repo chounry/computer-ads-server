@@ -41,6 +41,7 @@ footer p:first-child{
     text-decoration: none;
     cursor: default;
 }
+#v_us{margin-top: 10px;}
 #social a{
     background-color:#E2E2E2;
     border-radius: 50px;

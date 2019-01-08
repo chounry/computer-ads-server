@@ -24,6 +24,7 @@ class Module_type(models.Model):
 
     def __str__(self):
         return self.module_name + ' ' + self.command_rate
+
 class Form_factor(models.Model):
     name = models.CharField(help_text='eg: SO-DIMM',max_length=30)    
 
@@ -41,19 +42,22 @@ class Memory_info(models.Model):
     platform_choice = (('Desktop','Desktop'),('Laptop','Laptop'))
     ecc_choice = (('Yes','Yes'), ('No','No'))
 
-    module_type = models.ForeignKey(Module_type,on_delete=models.SET_NULL,null=True,blank=True)
+    module_type = models.ForeignKey(Module_type,on_delete=models.SET_NULL, null=True,blank=True)
 
     platform = models.CharField(max_length=10,choices=platform_choice,null=True)
-    isECC = models.CharField(max_length=3, choices=ecc_choice,blank=True,default='---')
+    isECC = models.CharField(max_length=3, choices=ecc_choice,blank=True,default='None')
     series = models.CharField(max_length=50, default=' ', blank=True)
-    model_num = models.CharField("Item Model Number",blank=True,max_length=100,default='---')
+    model_num = models.CharField("Item Model Number",blank=True,max_length=100,default='None')
     capacity = models.PositiveIntegerField(help_text="Unit: MB")
     slug = models.SlugField(unique=True,blank=True,max_length=100)
-    voltage = models.CharField(max_length=100,help_text="**Unit: V",blank=True,default='---')
+    voltage = models.CharField(max_length=100,help_text="**Unit: V",blank=True,default='None')
     pin = models.ForeignKey(Pin,on_delete=models.SET_NULL, null=True)
 
     mem_brand = models.ForeignKey(Mem_brand,on_delete=models.CASCADE,verbose_name='Memory Brand')
     mem_tech = models.ForeignKey(Mem_tech,on_delete=models.CASCADE,verbose_name='Memory Technology')
+
+    class Meta:
+        verbose_name = "Memory Info"
 
     def get_mem_cap(self):
         return str(self.capacity)+' MB' if len(str(self.capacity)) < 4 else str(myUtil.toGBint(self.capacity)) + ' GB'

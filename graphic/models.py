@@ -65,7 +65,11 @@ class Graphic_info(models.Model):
     api_supp = models.ManyToManyField(API_supp,verbose_name='API Support',help_text='eg:DirectX')
     expansion_slot = models.ForeignKey(Expansion_slot, on_delete=models.CASCADE,verbose_name=u'Expansion Connector')
 
+    class Meta:
+        verbose_name = "CPU Info"
+
     def get_mem_cap(self):
+        # get the memory capcity with a proper unit
         return str(self.mem_cap)+' MB' if len(str(self.mem_cap)) < 4 else str(myUtil.toGBint(self.mem_cap)) + ' GB'
 
     def __str__(self):
