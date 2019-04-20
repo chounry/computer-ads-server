@@ -12,22 +12,36 @@ $(document).ready(function(){
 
 	// end markdown 
 
-	// --------- for fold the spec table
-	var continue_display_btn = $('#continue-display-btn');
+	// <--------- for fold the spec table
+	var see_more_btn = $('#see-more-btn');
 	var last_row_container = $('#last-row-container');
 
-	continue_display_btn.attr('display','false');
-	continue_display_btn.click(function(){
-		$('#second-display').css('display','unset');
-		continue_display_btn.removeAttr('id');
-		continue_display_btn.attr('display','true');
+	see_more_btn.attr('display','false');
+
+	see_more_btn.click(function(){
+		if(screen.width < 1025){
+			$('#second-display').css('display','unset');
+			see_more_btn.removeAttr('id');
+			see_more_btn.attr('display','true');
+		}
 	})
 
 	last_row_container.click(function(){
-		$("#second-display").css('display','none');
-		continue_display_btn.attr('id','continue-display-btn');
-		continue_display_btn.attr('display','false');
+		if(screen.width < 1025){
+			$("#second-display").css('display','none');
+			see_more_btn.attr('id','see-more-btn');
+			see_more_btn.attr('display','false');
+		} 
 	})
+	window.addEventListener('resize',function(){
+		if(screen.width > 1024){
+			$('#second-display').css('display','unset');
+			see_more_btn.removeAttr('id');
+			see_more_btn.attr('display','true');
+		}
+	})
+
+	// end fold spec table ------------------>
 
 
 	// ---------- Product picture slide --------------
@@ -80,52 +94,5 @@ $(document).ready(function(){
 		})
 		setImg(next_img);
 	})
-	// ----------- End product picture slide ------------
-	
-
-	// ----------- Supported product -----------
-	// function putNewPro(section, newProArr){
-	// 	$(section).empty();
-	// 	$(section).append(newProArr);	
-	// }
-
-	// // --- CPU ---
-	// var cpu_section = $(".all_pro_cont ul"); 
-	// var curr_cpu = $(".all_pro_cont ul li:not('.test')");
-	// var cpu_arr = $(".all_pro_cont ul li");
-	// var cpu_sli_btn = $(".sli_cpu");
-	// var cpu_pos = {
-	// 	"start":0,
-	// 	"end":2
-	// }
-
-	// // this 2 lines below dosen't use when there is server
-	// cpu_section.empty();
-	// cpu_section.append($(curr_cpu));
-	
-	// // listen for click;
-	// cpu_sli_btn.click(function(){
-	// 	console.log("Click");
-	// 	if(this.dataset.to == "left"){
-	// 		console.log("left")
-	// 		if(cpu_pos.start < 2){
-	// 			return;// it will request from server,
-	// 		}else{
-	// 			cpu_pos.start -= 2;
-	// 			cpu_pos.end -= 2;
-	// 		}
-			
-	// 	}else{
-	// 		if(cpu_pos.end == cpu_arr.length){
-	// 			return; // it will request from server,
-	// 		}else{
-	// 			cpu_pos.start += 2;
-	// 			cpu_pos.end += 2;
-	// 		}
-	// 	}
-	// 	// put the new product in
-	// 	curr_cpu = cpu_arr.slice(cpu_pos.start,cpu_pos.end);
-	// 	putNewPro(cpu_section,curr_cpu);
-	// })
     
 })

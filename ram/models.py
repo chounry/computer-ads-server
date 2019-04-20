@@ -56,8 +56,21 @@ class Memory_info(models.Model):
     mem_brand = models.ForeignKey(Mem_brand,on_delete=models.CASCADE,verbose_name='Memory Brand')
     mem_tech = models.ForeignKey(Mem_tech,on_delete=models.CASCADE,verbose_name='Memory Technology')
 
+
     class Meta:
         verbose_name = "Memory Info"
+
+    def get_name(self):
+        tmp_module_name = self.module_type.module_name if self.module_type else ' '
+        tmp_model_num = self.model_num if self.model_num else ' '
+        return self.mem_brand.name + " " + tmp_module_name + " "  + self.get_mem_cap()
+
+    def get_image(self):
+        try :
+            ret = self.image_set.all()[0].image.url
+        except :
+            ret = None
+        return ret
 
     def get_mem_cap(self):
         return str(self.capacity)+' MB' if len(str(self.capacity)) < 4 else str(myUtil.toGBint(self.capacity)) + ' GB'
@@ -77,7 +90,7 @@ class Memory_info(models.Model):
         return self.mem_brand.name+ ' '+ self.series + ' ' + self.mem_tech.name + ' ' + self.get_mem_cap()+ ' '  + self.model_num
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='ram')
+    image = models.ImageField(upload_to='ram',max_length=400)
     ram = models.ForeignKey(Memory_info,on_delete=models.CASCADE)
 
 class Memory_market(models.Model):

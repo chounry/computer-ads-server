@@ -68,6 +68,13 @@ class Graphic_info(models.Model):
     class Meta:
         verbose_name = "CPU Info"
 
+    def get_image(self):
+        try :
+            ret = self.image_set.all()[0].image.url
+        except :
+            ret = None
+        return ret
+        
     def get_mem_cap(self):
         # get the memory capcity with a proper unit
         return str(self.mem_cap)+' MB' if len(str(self.mem_cap)) < 4 else str(myUtil.toGBint(self.mem_cap)) + ' GB'
@@ -90,7 +97,7 @@ class Graphic_info(models.Model):
         super(Graphic_info,self).save(*args,**kwargs) 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='graphic')
+    image = models.ImageField(upload_to='graphic',max_length=400)
 
     graphic = models.ForeignKey(Graphic_info,on_delete=models.CASCADE)
 

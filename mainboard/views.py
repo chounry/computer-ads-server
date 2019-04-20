@@ -24,9 +24,10 @@ def get_moth_detail(request,slug):
 
     supported_cpu = CPU_info.objects.filter(socket_type = mainboard_inst.socket_type)
     supported_ram = Memory_info.objects.filter(mem_tech = mainboard_inst.mem_tech)
-    # print(mainboard_inst.expan_slot.all())
     supported_gpu = Graphic_info.objects.filter(expansion_slot__in = mainboard_inst.expan_slot.all())
-    print(len(supported_gpu))
+
+
+    print(len(supported_gpu),len(supported_ram),len(supported_cpu))
     context = {
         "mainboard" : mainboard_inst,
         "supp_cpu" : supported_cpu,

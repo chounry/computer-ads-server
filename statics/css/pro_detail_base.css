@@ -175,6 +175,7 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
 .pro_box p{margin:0;}
 .pro_box hr{margin:0 !important;}
 .pro_img{height:135px;margin-bottom:3px;overflow: hidden;width:100%;}
+.pro_img img {vertical-align: top;}
 .recom_pro_title a{
     font-size: 13px !important;
     font-family: "segoe ui",sans-serif;
@@ -218,8 +219,8 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
     /* spec table display only 1 part */
     #second-display{display: none;}
     #last-row-container{cursor: pointer;}
-    #continue-display-btn{position: relative;border:0;cursor: pointer;}
-    #continue-display-btn::after, #last-row-container::after {
+    #see-more-btn{position: relative;border:0;cursor: pointer;}
+    #see-more-btn::after, #last-row-container::after {
         height: 60%;
         width: 100%;
         content: " ";
@@ -228,7 +229,7 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
         opacity: 0.6;
         background: black;
     }
-    #continue-display-btn::before, #last-row-container::before{
+    #see-more-btn::before, #last-row-container::before{
         position: absolute;
         content: "SEE MORE";
         display: inline-block;
@@ -255,9 +256,9 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
     #last-row-container:active:after{background: #348899 !important;}
     #last-row-container:hover:after{background: rgb(31, 31, 31);}
     
-    #continue-display-btn:active:after{background: #348899 !important;}
-    #continue-display-btn:hover:before {text-decoration: underline;}
-    #continue-display-btn:hover:after, #last-row-container:hover:after{background: rgb(31, 31, 31);}
+    #see-more-btn:active:after{background: #348899 !important;}
+    #see-more-btn:hover:before {text-decoration: underline;}
+    #see-more-btn:hover:after, #last-row-container:hover:after{background: rgb(31, 31, 31);}
 }
 /* 
 @media only screen and (max-width:880px){

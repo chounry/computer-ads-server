@@ -67,7 +67,7 @@ class Mainboard_info(models.Model):
         try :
             ret = self.image_set.all()[0].image.url
         except :
-            ret = None;
+            ret = None
         return ret
 
     def __str__(self):
@@ -81,7 +81,7 @@ class Mainboard_info(models.Model):
         super(Mainboard_info,self).save(*args,**kwargs)
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='mainboard')
+    image = models.ImageField(upload_to='mainboard',max_length=400)
 
     mainboard = models.ForeignKey(Mainboard_info,on_delete=models.CASCADE)
 

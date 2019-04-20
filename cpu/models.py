@@ -63,7 +63,7 @@ class CPU_info(models.Model):
         try :
             ret = self.image_set.all()[0].image.url
         except :
-            ret = None;
+            ret = None
         return ret
 
     def __str__(self):
@@ -79,7 +79,7 @@ class CPU_info(models.Model):
         super(CPU_info,self).save(*args,**kwargs)
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='cpu')
+    image = models.ImageField(upload_to='cpu',max_length=400)
 
     cpu = models.ForeignKey(CPU_info,on_delete=models.CASCADE)
 

@@ -3,235 +3,281 @@
 {% load static %}
 {% block title %}Computer Spec | Motherboard Detail{% endblock %}
 {% block staticfiles %}
+	<link rel="stylesheet" href="{% static 'snippet/css/pn-slide-container.css' %}">	
 	<link rel="stylesheet" href="{% static 'css/pro_detail_base.css' %}">
 	<script src="{% static 'js/pro_detail_base.js' %}"></script>
 {% endblock staticfiles %}
 {% block content %}
-<div class="pro_detail">
-<!-- Producute main title -->
-	<h2>{{ ram.mem_brand.name }} {{ ram.series }} {{ ram.model_num }}</h2>
-	<hr />
 
-	<div id="m_bottom">
-		<div id="right_grid">
-			<div id="r_g_up">
-				<!-- share logo and rate stars -->
-				<div id="sh_rate">
-					<div>
-						<i class="fab fa-facebook"></i>
-						<i class="fab fa-google-plus-square"></i>
-						<i class="fab fa-twitter-square"></i>
-					</div>
-					<div>
-						<span>Rate stars</span>
-					</div>
-				</div>
-				
-				<!-- Sliding picture -->
-				<div id="border_right">
-					<div id="sli_pic">
-							<div data-to="left"><i class="fas fa-angle-left"></i></div>
-							<div data-to="right"><i class="fas fa-angle-right"></i></div>
-					</div>
-				</div>
-				<div id="pho_change">
-					<ul>
-						<li><img src="../imgs/moth.png" data-pos="1" width="100%" alt=""/></li>
-						<li><img src="../imgs/moth1.jpg" data-pos="2" width="100%" alt=""/></li>
-						<li><img src="../imgs/moth2.jpg" data-pos="3" width="100%" alt=""/></li>
-					</ul>
-				</div>
-			</div>
 
-			<!-- Available market for product -->
-			<div id="r_g_bottom">
-				<table id="market">
-					<tr>
-						<td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/newegg-logo.png" width="100" alt="newegg logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"><div class="buy_logo"buy_logo>Check</div></a></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/amazon-logo1.png" width="100" alt="amazon logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"></a><div class="buy_logo">Check</div></a></td>
-					</tr>
-					<tr>
-						<td colspan="2"><a href="#"><img src="../imgs/logo/ebay-logo1.png" width="100" alt="ebay logo"/></a></td>
-						<td></td>
-						<td align="right" class="market_cost">14.99$</td>
-						<td align="right"><a href="#"><div class="buy_logo">Check</div></a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
 
-		<!-- Specificaion table -->
-		<div id="left_grid">
-			<div style="margin-top:30px;"></div>
-			<div id="lef_m_grid">
-				<div id="lef_lef_gr">
-					<div style="background-color:white;">
-						<table width="90%">
-							<tr>
-								<td><span>Memory Brand</span></td>
-								<td align="center">{{ ram.mem_brand.name }}</td>
-							</tr>
-							<tr>
-								<td><span>Command Rate</span></td>
-								<td align="center">{{ ram.module_type.command_rate }} (x2 2666 MHz )</td>
-							</tr>
-							<tr>
-								<td><span>Module Name</span></td>
-								<td align="center">{{ ram.module_type.module_name }}</td>
-							</tr>
-							<tr>
-								<td><span>Capacity</span></td>
-								<td align="center">{{ ram.get_mem_cap }}</td>
-							</tr> 
-							<tr>
-								<td><span>Cycle Time</span></td>
-								<td align="center">{{ ram.module_type.cycle_time }}</td>
-							</tr>
-							<tr>
-								<td><span>Transfer Time</span></td>
-								<td align="center">{{ ram.module_type.transfer_time }}</td>
-							</tr>
-							<tr>
-								<td><span># of Pins</span></td>
-								<td align="center">{{ ram.pin.num_of_pin }}</td>
-							</tr>
-							<tr>
-								<td><span>Memory Technoly</span></td>
-								<td align="center">{{ ram.mem_tech.name }}</td>
-							</tr>
-							<tr>
-								<td><span>ECC</span></td>
-								<td align="center">{{ ram.isECC }}</td>
-							</tr>
-							<tr id="tr_no_border">
-								<td><span>Form Factor</span></td>
-								<td align="center">{{ ram.pin.form_factor.name }}</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			
-				<!-- Supported product section -->
-				<div id="lef_right_gr">
-					<div class="recom">
+<div id="detail-main">
+        <p>{{ ram.get_name }}</p>
+        <hr />
+    
+        <div id="m_bottom">
+            <div id="right_grid">
+                <div id="r_g_up">
+                    <!-- share logo and rate stars -->
+                    <div id="sh_rate">
+                        <div>
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-google-plus-square"></i>
+                            <i class="fab fa-twitter-square"></i>
+                        </div>
+                        <div>
+                            <span>Rate stars</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Sliding picture -->
+                    <div id="border_right">
+                        <div id="sli_pic">
+                            <div data-to="left"><p> <i class="fas fa-angle-left"></i></p></div>
+                            <div data-to="right"><p> <i class="fas fa-angle-right"></i></p></div>
+                        </div>
+                    </div>
+                    <div id="pho_change">
+                        <ul>
+                            {% for img_instance in mainboard.image_set.all %}
+                                <li><img src="{{ img_instance.image.url }}" width="100%" alt=""/></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Available market for product -->
+                <div id="r_g_bottom">
+                    {% if mainboard.mainboard_market_set.count > 0 %}
+                    <table id="market">
+                        <tr>
+                            <td align="center"><div class="buy_logo" id="avail_logo">Available</div></td>
+                        </tr>
+                        {% for market in mainboard.mainboard_market_set.all %}
+                            <tr>
+                                <td colspan="2"><a target="_blank" href="{{ market.link }}"><img src="{{ market.market.img.url }}" width="100" alt="newegg logo"/></a></td>
+                                <td></td>
+                                <td align="right" class="market_cost">{{ market.prize }}$</td>
+                                <td align="right"><a target="_blank" href="{{ market.link }}"><div class="buy_logo">Check</div></a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+                </div>
+            </div>
+    
+            <div id="left_grid">
+                <div style="margin-top:36px;"></div>
+                <div id="lef_m_grid">
+                    <div id="lef_lef_gr">
+                        <div id="spec-table-container">
+                            <div id="first-display">
+                                <div class="row-container">
+                                    <div class="col1">
+										Memory Brand
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.mem_brand.name }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+											Command Rate
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.module_type.command_rate }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+											Capacity
+                                    </div>
+                                    <div class="col2 markdown-content">
+										{{ ram.get_mem_cap }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+											Cycle Time
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.module_type.cycle_time }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+										Transfer Time
+                                    </div>
+                                    <div class="col2 markdown-content">
+										{{ ram.module_type.transfer_time }}  
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+										# of Pins
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.pin.num_of_pin }}
+                                    </div>
+                                </div>
+                                <div class="row-container" id="see-more-btn">
+                                    <div class="col1">
+											Memory Technoly
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.mem_tech.name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="second-display">
+                                
+                                <div class="row-container">
+                                    <div class="col1">
+										ECC
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.isECC }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+											Form Factor
+                                    </div>
+                                    <div class="col2 markdown-content">
+											{{ ram.pin.form_factor.name }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Internal I/O Connectors
+                                    </div>
+                                    <div class="col2 markdown-content">
+                                        {{ mainboard.interal_des|linebreaks  }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                    Size
+                                    </div>
+                                    <div class="col2 markdown-content">
+                                        {{ mainboard.size }}
+                                    </div>
+                                </div>
+                                <div class="row-container">
+                                    <div class="col1">
+                                        Form Factor
+                                    </div>
+                                    <div class="col2 markdown-content">
+                                        {{ mainboard.form_factor.name }}
+                                    </div>
+                                </div>
+                                <div class="row-container " id="last-row-container">
+                                    <div class="col1">
+                                        Chipset
+                                    </div>
+                                    <div class="col2 markdown-content">
+                                        {{ mainboard.chipset.name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End left main grid -->
+            </div>
+            <!-- End Specificaiton table -->
+            <div id="all_support_pro">
+					{% if supp_cpu.count > 0 %}
+					<div class="support_pro">
 						<p>SUPPORTED CPU</p>
-						<div class="recom_m_box">
-							<!-- Button left -->
-							<div class="sli_cpu" data-to="left"><i class="fas fa-angle-left"></i></div>
-
-							<!-- Main box store each product -->
-							<div class="all_pro_cont">
-								<ul>
-									<li>
+						<div class="pn-ProductNav_Wrapper">
+							<nav id="" class="pn-ProductNav pnProductNav">
+								<div id="" class="pn-ProductNav_Contents pnProductNavContents">
+									
+									{% for pro in supp_cpu %}
+									<div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
 										<div class="pro_box">
 											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
-												<a href="">
-											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p >
-													Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores
-												</p>
-											</a></div>
-											<p class="read_spec"><a href="#">Read Spec</a></p>
-											<div>
-												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
-											</div>
-										</div>
-									</li>
-
-									<li>
-										<div class="pro_box">
-											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
+												<a href="{{ pro.get_absolute_url }}">
+													<img src="{{ pro.get_image }}" width="100%" alt="product-img"/>
 												</a>
 											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p>
-														Intel i5-2400- 3.4GHz- Cache : 4MB - 4Cores
-												</p>
-											</a></div>
-											<p class="read_spec"><a href="#" >Read Spec</a></p>
-											<div>
-												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
+											<hr style="margin:0;">
+											<div class="recom_pro_title">
+												<a href="{{ pro.get_absolute_url }}">{{ pro.name }}</a>
 											</div>
-										</div>
-									</li>
-
-									<li class="test">
-										<div class="pro_box">
-											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth1.jpg" width="100%" alt="product-img"/>
-												</a>
-											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p>
-														Intel i5-2400 - 3.4GHz - Cache : 4MB - 4Cores
-												</p>
-											</a></div>
 											<p class="read_spec"><a href="#">Read Spec</a></p>
 											<div>
 												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
+												<a href="{{ pro.get_absolute_url }}" class="check_butt">CHECK IT OUT</a>
 											</div>
 										</div>
-									</li>
-
-									<li class="test">
-										<div class="pro_box">
-											<div class="pro_img">
-												<a href="">
-													<img src="../imgs/moth2.jpg" width="100%" alt="product-img"/>
-												<a href="">
-											</div>
-											<hr style="margin:0;" />
-											<div class="recom_pro_title"><a href="">
-												<p>
-														Intel i5-2400- 3.4GHz-Cache : 4MB - 4Cores
-												</p>
-											</a></div>
-											<p class="read_spec"><a href="#">Read Spec</a></p>
-											<div>
-												<p class="pro_price">14.99$</p>
-												<a href="#" class="check_butt">CHECK IT OUT</a>
-											</div>
-										</div>
-									</li>                                        
-								</ul>
-							</div>
-							<!-- button right -->
-							<div class="sli_cpu" data-to="right">
-								<i class="fas fa-angle-right"></i>                        
-							</div>
+									</div>
+	
+									{% endfor %}
+								</div>
+			
+							</nav>
+							<button  class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
+								<svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+							</button>
+							<button  class="pn-Advancer pn-Advancer_Right pnAdvancerRight" type="button">
+								<svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+							</button>
 						</div>
-						<!-- End each supported product -->
 					</div>
+					{% endif %}
+	
+					
+					{% if supp_ram.count > 0 %} 
+					<div class="support_pro">
+						<p>SUPPORTED RAM</p>
+						<div class="pn-ProductNav_Wrapper">
+							<nav id='' class="pn-ProductNav pnProductNav">
+								<div id="" class="pn-ProductNav_Contents pnProductNavContents">
+									{% for pro in supp_ram %}
+									<div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+										<div class="pro_box">
+											<div class="pro_img">
+												<a href="{{ pro.get_absolute_url }}">
+													<img src="{{ pro.get_image }}" width="100%" alt="product-img"/>
+												</a>
+											</div>
+											<hr style="margin:0;">
+											<div class="recom_pro_title">
+												<a href="{{ pro.get_absolute_url }}">{{ pro.get_name }}</a>
+											</div>
+											<p class="read_spec"><a href="#">Read Spec</a></p>
+											<div>
+												<p class="pro_price">14.99$</p>
+												<a href="{{ pro.get_absolute_url }}" class="check_butt">CHECK IT OUT</a>
+											</div>
+										</div>
+									</div>
+	
+									{% endfor %}
+	
+								</div>
+								
+							</nav>
+							<button id="" class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
+								<svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+							</button>
+							<button id="" class="pn-Advancer pn-Advancer_Right pnAdvancerRight" type="button">
+								<svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+							</button>
+						</div>
+					</div>
+					{% endif %}
+	
 				</div>
-				<!-- End supported product section -->
-			</div>
-			<!-- End left main grid -->
-		</div>
-		<!-- End Specificaiton table -->
-	</div>
-</div>
+        </div>
+    </div>
 {% endblock content %}
+{% block scripts %}
+    <script src="{% static 'snippet/js/pn-slide-container.js' %}"></script>
+    <script src="{% static 'js/pro_detail_base.js' %}"></script>       
+
+{% endblock scripts %}
+
 			
