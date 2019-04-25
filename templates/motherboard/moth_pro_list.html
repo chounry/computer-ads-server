@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'css/pro_list_base.css' %}">
     <link rel="stylesheet" href="{% static 'css/mainboard/mainboard_list.css' %}">
 {% endblock staticfiles %}
-{% block content %}
+{% block content %} 
     <div id="body">
         <div id="left_gr">
             <div id="title-tag">
@@ -16,31 +16,12 @@
                 </div>
                 <div id="filter-things">
                     <ul>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">ATX</div>
-                        </li>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">Micro ATX</div>
-                        </li>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">LGA1151</div>
-                        </li>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">Intel</div>
-                        </li>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">ATX</div>
-                        </li>
-                        <li>
-                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                            <div class="tag-name">Micro ATX</div>
-                        </li>
-                        
+                        {% for val in all_filter_val %}
+                            <li>
+                                <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                                <div class="tag-name">{{ val.name }}</div>
+                            </li>
+                            {% endfor %}
                     </ul>
                     <!-- <div id="shotcut-filter">
                         <select name="filter" id="select-filter-box">
@@ -49,6 +30,7 @@
                     </div> -->
                 </div>
             </div>
+
             <div class="pro_list_container">
                 <ul>
                     {% for moth in all_moths %}                    
@@ -65,7 +47,7 @@
                                 <div class="summary_spec">
                                     <p><small>Socket Type : {{ moth.socket_type.name }}</small></p>
                                 </div>
-                                <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
+                                <p class="to_spec"><a href="{{ moth.get_absolute_url }}">Read Spec</a></p>
                                 <div class="pro_share">
                                     <a href=""><i class="fab fa-facebook"></i></a>
                                     <a href=""><i class="fab fa-google-plus-square"></i></a>
@@ -73,64 +55,40 @@
                                 </div>
                                 <div class="price-check">
                                     <p>14.99$</p>
-                                    <p><a href="">CHECK IT OUT</a></p>
+                                    <p><a href="{{ moth.get_absolute_url }}">CHECK IT OUT</a></p>
                                 </div>
                             </div>
                         </li>
                     {% endfor %}
-
-                    {% comment %} <li>
-                        <div class="pro_img">
-                            <a href="{{ graphic.get_absolute_url }}">
-                                <img src="../imgs/moth2.jpg" alt="" width="100%" />
-                            </a>
-                        </div>
-                        <hr>
-                        <div class="pro_cont">
-                            <p class="pro_title"><a href="{{ graphic.get_absolute_url }}">{{ graphic.name }} {{ graphic.mem_inter_width }} </a></p>
-                            <div class="summary_spec">
-                                <p><small>{{ graphic.processor.name }} : {{ graphic.num_of_core }}</small></p>
-                                <p><small>Cock Speed : {{ graphic.core_clock }}</small></p>
-                            </div>
-                            <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
-                            <div class="pro_share">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-google-plus-square"></i></a>
-                                <a href=""><i class="fab fa-twitter-square"></i></a>
-                            </div>
-                            <div class="price-check">
-                                <p>14.99$</p>
-                                <p><a href="">CHECK IT OUT</a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="pro_img">
-                            <a href="{{ graphic.get_absolute_url }}">
-                                <img src="../imgs/moth2.jpg" alt="" width="100%" />
-                            </a>
-                        </div>
-                        <hr>
-                        <div class="pro_cont">
-                            <p class="pro_title"><a href="{{ graphic.get_absolute_url }}">{{ graphic.name }} {{ graphic.mem_inter_width }} </a></p>
-                            <div class="summary_spec">
-                                <p><small>{{ graphic.processor.name }} : {{ graphic.num_of_core }}</small></p>
-                                <p><small>Cock Speed : {{ graphic.core_clock }}</small></p>
-                            </div>
-                            <p class="to_spec"><a href="{{ graphic.get_absolute_url }}">Read Spec</a></p>
-                            <div class="pro_share">
-                                <a href=""><i class="fab fa-facebook"></i></a>
-                                <a href=""><i class="fab fa-google-plus-square"></i></a>
-                                <a href=""><i class="fab fa-twitter-square"></i></a>
-                            </div>
-                            <div class="price-check">
-                                <p>14.99$</p>
-                                <p><a href="">CHECK IT OUT</a></p>
-                            </div>
-                        </div>
-                    </li> {% endcomment %}
                 </ul>
             </div>
+            {% if all_moths.paginator.num_pages > 1%}
+            <div class="pagination">
+                <span class="step-links">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {% if all_moths.has_previous %}
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            {% endif %}
+
+                            <!-- {% for i in all_moths.paginator.page_range %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}"> {{ i }}</a></li>
+                            {% endfor %} -->
+
+                            {% for l in  all_moths.paginator.page_range %}
+                                {% if l <= all_moths.number|add:5 and l >= all_moths.number|add:-5 %}
+                                    <li><a href="?page={{forloop.counter}}">{{forloop.counter}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if all_moths.has_next %}
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+
+            </div>
+            {% endif %}
         </div>
         
         <!-- Filter Section -->
@@ -142,19 +100,11 @@
                     <div class="each_filter_cont">
                         <p>Motherboard Form Factor :</p>
                         <ul>
+                            {% for inst in form_factors %}
                             <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ATX
+                                <input {% if inst in form_factor_compare %} checked {% endif %}  type="checkbox" value="{{ inst.name }}" name="form_factor"/>&nbsp; &nbsp;{{ inst.name }}
                             </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;Micro ATX
-                            </li>
-        
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;Mouse ATX
-                            </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
-                            </li> 
+                            {% endfor %}
                             <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
                         </ul>
                     </div>
@@ -162,19 +112,11 @@
                     <div class="each_filter_cont">
                         <p>Socket Type :</p>
                         <ul>
+                            {% for inst in sockets %}
                             <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1151
+                                <input {% if inst in socket_compare %} checked {% endif %}  type="checkbox" value="{{ inst.name }}" name="socket"/>&nbsp; &nbsp;{{ inst.name }}
                             </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1155
-                            </li>
-        
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;LGA1156
-                            </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;MA501
-                            </li>
+                            {% endfor %}
                             <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
                         </ul>
                     </div>
@@ -182,19 +124,11 @@
                     <div class="each_filter_cont">
                         <p>Brand :</p>
                         <ul>
+                            {% for inst in companies %}
                             <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;GYGABYTE
+                                <input {% if inst in company_compare %} checked {% endif %} type="checkbox" value="{{ inst.name }}" name="company"/>&nbsp; &nbsp;{{ inst.name }}
                             </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ASUS
-                            </li>
-        
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ACER
-                            </li>
-                            <li>
-                                <input type="checkbox" name="atx"/>&nbsp; &nbsp;ALIEN
-                            </li>
+                            {% endfor %}
                             <li class="apply-filter-btn apply-filter-btn-out"><button class="btn btn-xs" type="submit">APPLY</button></li>
                         </ul>
                     </div>

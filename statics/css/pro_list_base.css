@@ -16,7 +16,7 @@ a{text-decoration: none;}
 }
 
 #left_gr {padding:0 30px;}
-#title-tag{border-bottom: 1px solid silver;padding:5px 0;}
+#title-tag{border-bottom: 1px solid silver;padding:5px 0;margin-bottom: 15px;}
 #title-tag ul li{margin-top:5px;}
 #title-tag h4{
     margin:0;
@@ -56,11 +56,12 @@ a{text-decoration: none;}
 #left_gr ul li {list-style: none;}
 
 ul hr{margin-bottom:0;margin-top:15px;}
+.pro_list_container{overflow: hidden;}
 .pro_list_container li{
     background: white;
     border-radius: 3px;
     width: 238px;
-    height:353px;
+    /* height:353px; */
     margin-right: 8px;
     margin-bottom: 13px;
     float:left;
@@ -106,8 +107,14 @@ li p a:hover{text-decoration: underline;}
     font-size: 12px;
     font-weight: bold;
     color:white;
-    padding:4px 10px;
+    padding:2px 10px;
 }
+.pagination{
+    width: 100%;
+    text-align: center;
+}
+.pagination > span{display: inline-block;}
+
 
 
 /*  Right grid */

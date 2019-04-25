@@ -1,20 +1,70 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
 from django.forms import modelformset_factory
+from django.core.paginator import Paginator
+from itertools import chain
+# from django.db.models import Q
 
-from .models import Mainboard_info
+from .models import Mainboard_info,Image, Mainboard_market,Form_factor,Socket_type, Company
 from cpu.models import CPU_info
 from ram.models import Memory_info
 from graphic.models import Graphic_info
-from .models import Image, Mainboard_market
 from .form import *
 
 # Create your views here.
 
 def get_all_moth(request): # homepage
-    all_moths = Mainboard_info.objects.all()
+
+    # <------------- handle filter
+    form_factors_req = request.GET.getlist('form_factor')
+    company_req = request.GET.getlist('company')
+    socket_req = request.GET.getlist('socket')
+
+    form_factors_query = Form_factor.objects.filter(name__in = form_factors_req)
+    company_query = Company.objects.filter(name__in = company_req)
+    socket_query = Socket_type.objects.filter(name__in = socket_req)
+
+    #these variable will send back to the template for comparing to find which has been selected
+    form_factor_compare = form_factors_query
+    company_compare = company_query
+    socket_compare = socket_query
+
+    # the var for displaying all the filter value on the top
+    all_filter_val = chain(form_factor_compare,company_compare,socket_compare)
+    
+    # if the individual filter value is null then we give that query an all object so that we can search correctly
+    company_query = company_query if company_query.exists() else Company.objects.all()
+    form_factors_query = form_factors_query if form_factors_query.exists() else Form_factor.objects.all()
+    socket_query = socket_query if socket_query.exists() else Socket_type.objects.all()
+    
+    all_moths = Mainboard_info.objects.filter(
+        company__in = company_query,
+        form_factor__in = form_factors_query ,
+        socket_type__in = socket_query
+    )
+
+    # end handle filter ---------------->
+    
+    form_factors = Form_factor.objects.all()
+    companies = Company.objects.all()
+    sockets = Socket_type.objects.all()
+
+    paginator = Paginator(all_moths, 12) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    all_moths = paginator.get_page(page)
     contexts = {
-        'all_moths':all_moths
+        'form_factors': form_factors,
+        'companies' : companies,
+        'sockets': sockets,
+        'all_moths':all_moths,
+
+        'form_factor_compare':form_factor_compare,
+        'company_compare':company_compare,
+        'socket_compare':socket_compare,
+
+        'all_filter_val':all_filter_val
+
     }
 
     return render(request,'motherboard/moth_pro_list.html',context=contexts)

@@ -30,7 +30,7 @@ class CPU_brand(models.Model):
         return self.name
 
 class Socket_type(models.Model):
-    name = models.CharField("Socket Type",max_length=50)
+    name = models.CharField("Socket Name",max_length=50)
     def __str__(self):
         return self.name
 

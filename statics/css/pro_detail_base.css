@@ -104,18 +104,18 @@ hr{border-color:#95989A !important;margin-top:0 !important;margin-bottom: 10px !
     border-radius: 50px;
     color:white;
     cursor: pointer;
-    font-size:14px;
+    font-size:12px;
     font-weight: bold;
     padding:2px 9px;
     text-align: center;
-    width:64px;
+    width:85px;
 }
 .buy_logo:hover{border-color:white;}
 #avail_logo{ 
     padding:2px 8px;
     border:unset;
     cursor: default;
-    font-size:16px;
+    font-size:14px;
     font-weight: bold;
     width:100% !important;  
 }
