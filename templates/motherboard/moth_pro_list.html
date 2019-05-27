@@ -17,11 +17,15 @@
                 <div id="filter-things">
                     <ul>
                         {% for val in all_filter_val %}
-                            <li>
-                                <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
-                                <div class="tag-name">{{ val.name }}</div>
-                            </li>
-                            {% endfor %}
+                        <li>
+                            <div class="del-tag-icon"><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">{{ val.name }}</div>
+                        </li>
+                        {% endfor %}
+                        <li id="clear_filter_btn">
+                            <div ><i class="fas fa-times-circle"></i></div>
+                            <div class="tag-name">Clear All</div>
+                        </li>
                     </ul>
                     <!-- <div id="shotcut-filter">
                         <select name="filter" id="select-filter-box">
@@ -218,7 +222,8 @@
 {% endblock content %}
 
 {% block scripts %}
-    
+    <script src="{% static 'js/pro_list_base.js' %}"></script>
+
     <script>
         (function($) {
             var filter_btn = $("#go-filter-btn > div");
