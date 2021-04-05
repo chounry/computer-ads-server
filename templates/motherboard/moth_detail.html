@@ -182,36 +182,140 @@
             </div>
             <!-- End Specificaiton table -->
             <div id="all_support_pro">
-                {% if supp_cpu.count > 0 %}
                 <div class="support_pro">
                     <p>SUPPORTED CPU</p>
                     <div class="pn-ProductNav_Wrapper">
                         <nav id="" class="pn-ProductNav pnProductNav">
                             <div id="" class="pn-ProductNav_Contents pnProductNavContents">
-                                
-                                {% for pro in supp_cpu %}
-                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
                                     <div class="pro_box">
                                         <div class="pro_img">
-                                            <a href="{{ pro.get_absolute_url }}">
-                                                <img src="{{ pro.get_image }}" width="100%" alt="product-img"/>
-                                            </a>
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_1.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
                                         </div>
                                         <hr style="margin:0;">
                                         <div class="recom_pro_title">
-                                            <a href="{{ pro.get_absolute_url }}">{{ pro.name }}</a>
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
                                         </div>
-                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
                                         <div>
                                             <p class="pro_price">14.99$</p>
-                                            <a href="{{ pro.get_absolute_url }}" class="check_butt">CHECK IT OUT</a>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                {% endfor %}
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_2.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_3.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_4.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_5.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_6.webp' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/cpu/cpu_7.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                                     
                             </div>
-        
+                            
                         </nav>
                         <button  class="pn-Advancer pn-Advancer_Left pnAdvancerLeft" type="button">
                             <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
@@ -221,36 +325,138 @@
                         </button>
                     </div>
                 </div>
-                {% endif %}
-
-                {% if supp_ram.count > 0 %} 
                 <div class="support_pro">
                     <p>SUPPORTED RAM</p>
                     <div class="pn-ProductNav_Wrapper">
                         <nav id='' class="pn-ProductNav pnProductNav">
                             <div id="" class="pn-ProductNav_Contents pnProductNavContents">
-                                {% for pro in supp_ram %}
-                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
                                     <div class="pro_box">
                                         <div class="pro_img">
-                                            <a href="{{ pro.get_absolute_url }}">
-                                                <img src="{{ pro.get_image }}" width="100%" alt="product-img"/>
-                                            </a>
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_1.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
                                         </div>
                                         <hr style="margin:0;">
                                         <div class="recom_pro_title">
-                                            <a href="{{ pro.get_absolute_url }}">{{ pro.get_name }}</a>
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
                                         </div>
-                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
                                         <div>
                                             <p class="pro_price">14.99$</p>
-                                            <a href="{{ pro.get_absolute_url }}" class="check_butt">CHECK IT OUT</a>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                {% endfor %}
-
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_2.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_3.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_4.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_5.jpeg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_6.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/ram/ram_7.webp' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                                   
                             </div>
                             
                         </nav>
@@ -262,36 +468,138 @@
                         </button>
                     </div>
                 </div>
-                {% endif %}
-
-                {% if supp_gpu.count > 0 %}
                 <div class="support_pro">
                     <p>SUPPORTED GRAPHIC CARD</p>
                     <div class="pn-ProductNav_Wrapper">
                         <nav id="" class="pn-ProductNav pnProductNav">
                             <div id="" class="pn-ProductNav_Contents pnProductNavContents">
-                                {% for pro in supp_gpu %}
-                                <div href="#" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
                                     <div class="pro_box">
                                         <div class="pro_img">
-                                            <a href="{{ pro.get_absolute_url }}">
-                                                <img src="{{ pro.get_image }}" width="100%" alt="product-img"/>
-                                            </a>
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_1.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
                                         </div>
                                         <hr style="margin:0;">
                                         <div class="recom_pro_title">
-                                            <a href="{{ pro.get_absolute_url }}">{{ pro.name }}</a>
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
                                         </div>
-                                        <p class="read_spec"><a href="#">Read Spec</a></p>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
                                         <div>
                                             <p class="pro_price">14.99$</p>
-                                            <a href="{{ pro.get_absolute_url }}" class="check_butt">CHECK IT OUT</a>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                {% endfor %}
-                                                         
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_2.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_3.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_4.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_5.png' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_6.jpg' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="{{ market.link }}" class="pn-ProductNav_Link" aria-selected="true"> 										
+                                    <div class="pro_box">
+                                        <div class="pro_img">
+                                            <a href="">
+                                                <img src="{% static 'imgs/gpu/gpu_7.png' %}" width="100%" alt="product-img"/>
+                                            <a href="">
+                                        </div>
+                                        <hr style="margin:0;">
+                                        <div class="recom_pro_title">
+                                            <a href="">Intel i5-2400-3.4GHz - Cache : 4MB - 4Cores</a>
+                                        </div>
+                                        <p class="read_spec"><a href="{{ market.link }}">Read Spec</a></p>
+                                        <div>
+                                            <p class="pro_price">14.99$</p>
+                                            <a href="{{ market.link }}" class="check_butt">CHECK IT OUT</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                                     
                             </div>
                             
                         </nav>
@@ -303,7 +611,6 @@
                         </button>
                     </div>
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
